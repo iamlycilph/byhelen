@@ -115,6 +115,11 @@ def main():
         overrides = json.loads(Path("overrides.json").read_text(encoding="utf-8"))
     ov = {key_of(k): v for k, v in overrides.items()}
 
+    ex_map = {}
+    if Path("examples.json").exists():
+        raw = json.loads(Path("examples.json").read_text(encoding="utf-8"))
+        ex_map = {key_of(k): v for k, v in raw.items()}
+
     kept, dropped, unresolved = [], [], []
     for c in cards:
         v = ov.get(c["k"])
@@ -125,7 +130,19 @@ def main():
             elif isinstance(v, dict):
                 c["ru"] = v.get("ru", ""); c["en"] = v.get("en", c["en"])
             if not c["ru"]: unresolved.append(c["en"])
+        if not c["ex"]:
+            hit = ex_map.get(c["k"]) or ex_map.get(key_of(c["en"]))
+            if hit: c["ex"] = [hit]
         kept.append(c)
+
+    # примеры растекаются на повторы того же слова в других уроках
+    pool = {}
+    for c in kept:
+        if c["ex"] and c["k"] not in pool:
+            pool[c["k"]] = c["ex"]
+    for c in kept:
+        if not c["ex"] and c["k"] in pool:
+            c["ex"] = pool[c["k"]]
 
     Path("data.js").write_text("window.VOCAB = " +
         json.dumps({"lessons": lessons, "cards": kept}, ensure_ascii=False, indent=1) +
@@ -136,6 +153,8 @@ def main():
            f"- Уроков: {len(lessons)}", f"- Карточек: {len(kept)}",
            f"- Переводов добавлено автоматически (проверить с Еленой): {auto_n}",
            f"- Осталось без перевода: {len(unresolved)}",
+           f"- Примеров добавлено из examples.json: {sum(1 for c in kept if c['ex'] and c['k'] in ex_map)}",
+           f"- Карточек без примера: {sum(1 for c in kept if not c['ex'])}",
            f"- Исключено вручную (overrides): {len(dropped)}",
            f"- Строк пропущено парсером (грамматика/примеры): {len(skipped)}", ""]
     if unresolved: rep += ["## Без перевода", ""] + [f"- {u}" for u in unresolved] + [""]

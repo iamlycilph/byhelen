@@ -89,6 +89,12 @@ textarea{resize:vertical;min-height:56px}
 <script>
 (function(){
 "use strict";
+if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(function(){});}
+if(!window.VOCAB){
+  document.getElementById("main").innerHTML='<div class="panel">Не удалось загрузить словарь (data.js).<br>Проверь сеть и попробуй ещё раз.</div>'
+   +'<button class="btn" onclick="location.reload()">Обновить</button>';
+  return;
+}
 const $=s=>document.querySelector(s);
 const CARDS=window.VOCAB.cards, LESSONS=window.VOCAB.lessons;
 const store={
@@ -160,12 +166,21 @@ function answer(btn,card,aKey){
     b.disabled=true;
     if(b.dataset.v===card[aKey])b.classList.add("ok");
   });
-  if(right)quiz.score++;
-  else{btn.classList.add("bad");quiz.mistakes.push(card);}
-  setTimeout(()=>{
-    quiz.i++;
-    quiz.i<quiz.len?renderQuestion():finishQuiz();
-  },right?650:1400);
+  const next=()=>{quiz.i++;quiz.i<quiz.len?renderQuestion():finishQuiz()};
+  const ex=(card.ex&&card.ex[0])||"";
+  if(ex){
+    const d=document.createElement("div");
+    d.className="cr-ex";d.style.margin="14px 2px 0";d.textContent=ex;
+    $("#opts").after(d);
+  }
+  if(right){quiz.score++;setTimeout(next,1300);}
+  else{
+    btn.classList.add("bad");quiz.mistakes.push(card);
+    const b=document.createElement("button");
+    b.className="btn";b.textContent="Дальше";b.style.marginTop="14px";
+    b.onclick=next;
+    $("#opts").parentElement.appendChild(b);
+  }
 }
 function finishQuiz(){
   const m=quiz.mistakes;
