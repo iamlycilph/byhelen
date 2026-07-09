@@ -173,14 +173,12 @@ function answer(btn,card,aKey){
     d.className="cr-ex";d.style.margin="14px 2px 0";d.textContent=ex;
     $("#opts").after(d);
   }
-  if(right){quiz.score++;setTimeout(next,1300);}
-  else{
-    btn.classList.add("bad");quiz.mistakes.push(card);
-    const b=document.createElement("button");
-    b.className="btn";b.textContent="Дальше";b.style.marginTop="14px";
-    b.onclick=next;
-    $("#opts").parentElement.appendChild(b);
-  }
+  if(right){quiz.score++;document.querySelectorAll(".prog")[1].textContent="верно: "+quiz.score;}
+  else{btn.classList.add("bad");quiz.mistakes.push(card);}
+  const b=document.createElement("button");
+  b.className="btn";b.textContent="Дальше";b.style.marginTop="14px";
+  b.onclick=next;
+  $("#opts").parentElement.appendChild(b);
 }
 function finishQuiz(){
   const m=quiz.mistakes;
