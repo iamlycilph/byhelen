@@ -1,0 +1,995 @@
+# Отчёт конвертера
+
+- Уроков: 77
+- Карточек: 1096
+- Переводов добавлено автоматически (проверить с Еленой): 154
+- Осталось без перевода: 0
+- Исключено вручную (overrides): 14
+- Строк пропущено парсером (грамматика/примеры): 810
+
+## Авто-переводы
+
+- Keep sth under the hat → держать в секрете, не разглашать
+- An early bird = a morning person =a morning lark → «жаворонок», утренний человек
+- A night owl = a night person = a sleepyhead → «сова», полуночник, соня
+- For example = for instance → например
+- Cheat meal/day → «читмил» — запланированное послабление в диете
+- Stay away from → держаться подальше от
+- Be allergic to → иметь аллергию на
+- Build castles in the air → строить воздушные замки
+- Quarrel = have a fight → ссориться
+- Tired = exhausted → уставший, измотанный
+- It's not my thing = it's not my cup of tea → это не моё, не в моём вкусе
+- Make a fortune = make a lot of money → разбогатеть, сколотить состояние
+- Hold your horses = slow down → «придержи коней», не торопись
+- On a daily basis = every day → ежедневно, на постоянной основе
+- Be enthusiastic about → относиться с энтузиазмом к
+- Climb a career ladder → подниматься по карьерной лестнице
+- Get career promotion → получить повышение по службе
+- Be proud of → гордиться чем-то/кем-то
+- Give me a hand =help → помочь («подать руку помощи»)
+- Trouble maker = pain in the ass/neck → возмутитель спокойствия, «заноза»
+- Cross the line → перейти черту, выйти за рамки
+- On your own /by yourself → самостоятельно, сам по себе
+- Get/be indignant → возмущаться, негодовать
+- Work-life balance → баланс работы и личной жизни
+- Handsome → красивый (о мужчине)
+- Be astounded → быть ошеломлённым
+- Be astonished → быть изумлённым
+- Restroom = bathroom = toilet = lavatory = loo → уборная, туалет (ряд синонимов)
+- Be in my/his/her early 20-s, 30-s, 40-s → быть в начале третьего/четвёртого/пятого десятка (чуть за 20/30/40)
+- Be in my/his/her late 20-s, 30-s, 40-s → под 30/40/50 (ближе к концу десятка)
+- Resonate with → находить отклик у, резонировать с
+- Mogul = tycoon → магнат, воротила
+- Important = crucial = vital = significant= critical → важный, ключевой (ряд синонимов)
+- Give or take = approximately → приблизительно, плюс-минус
+- Hit the sack = go to bed → отправиться спать, «на боковую»
+- Old-fashioned = outdated → старомодный, устаревший
+- Go the extra mile → сделать больше, чем требуется; выложиться
+- Give it a go = give it a try = have a go = try → попробовать, рискнуть
+- Be enthusiastic about +Ving → с энтузиазмом делать что-то (+Ving)
+- Crazy = insane = out of one's mind = be nuts → сумасшедший, не в себе (ряд синонимов)
+- Be on cloud 9 = be over the moon = be extremely happy → быть на седьмом небе от счастья
+- Goal= aim =target =purpose → цель (ряд синонимов)
+- Feel/be down in the dumps/mouth= feel sad, upset, unhappy → быть в унынии, «как в воду опущенный»
+- Splitting headache → раскалывающая головная боль
+- Make a living → зарабатывать на жизнь
+- Be out of your mind = go crazy → сойти с ума, быть не в себе
+- Make up your mind = make a decision → принять решение, определиться
+- Keep in mind =remember → иметь в виду, помнить
+- Practice makes perfect → повторение — мать учения
+- Slip my mind → вылетело из головы
+- Weird = odd = strange → странный, чудной
+- Slip my mind → вылетело из головы
+- Ring finger → безымянный палец
+- Analytical programmes → аналитические программы (на ТВ)
+- Commercial (break) → рекламная пауза
+- News (political, sports, local, international...) → новости (политические, спортивные, местные, международные...)
+- Weather forecast → прогноз погоды
+- Morning show → утреннее шоу
+- A storm in a teacup → буря в стакане воды
+- Fried eggs (sunny side up) → глазунья
+- An omelet → омлет
+- Scrambled eggs → яичница-болтунья
+- Put on the back burner = delay= put off → отложить в долгий ящик
+- Think on an empty stomach → думать на голодный желудок
+- From zero to hero = from rags to riches → из грязи в князи
+- Prior to = before → до, прежде чем
+- Make up one's mind = decide → решиться, определиться
+- Soap opera → мыльная опера
+- Self-made person → человек, добившийся всего сам
+- Be in lifted spirits → быть в приподнятом настроении
+- A commercial → рекламный ролик
+- Give or take = approximately → приблизительно, плюс-минус
+- Be born with a silver spoon in the mouth → родиться «с серебряной ложкой во рту», в богатой семье
+- The heir → наследник
+- Enjoy + Ving → получать удовольствие от (+Ving)
+- Cut the shit → «хватит нести чушь» (грубо)
+- Come up with = make up = create → придумать, создать
+- Clarify = specify → уточнить, конкретизировать
+- Pass away = die → уйти из жизни, скончаться
+- Around = give or take → примерно, около
+- Get on (well) with = find common language → ладить, находить общий язык с
+- Remind about/of → напоминать о
+- Frequent = often → частый; часто
+- Cost a fortune = cost an arm and a leg = very expensive → стоить целое состояние, «влететь в копеечку»
+- Get on (well) with = find common language with → ладить, находить общий язык с
+- Mingle = communicate → общаться, смешиваться с толпой
+- Pick up lines → фразы для знакомства
+- Kill two birds with one stone → убить двух зайцев одним выстрелом
+- A cent → цент
+- A dime =10 cents → дайм — монета в 10 центов
+- A quarter → квотер — монета в 25 центов
+- Fall in love with = be head over heels with → влюбиться; быть по уши влюблённым в
+- Immerse into =dive into → погрузиться в
+- Butterflies in the stomach → «бабочки в животе»
+- I mean = want to say → я имею в виду, хочу сказать
+- Aim = target = goal =purpose → цель (ряд синонимов)
+- Free time = spare time = leisure time → свободное время
+- Give it a go = give it a try = have a go = try → попробовать, рискнуть
+- Get carried away +Ving → увлечься, забыться (+Ving)
+- Mean = want → иметь в виду, хотеть сказать
+- By accident = accidently → случайно, ненароком
+- See = spot → заметить, засечь
+- Stroll = walk → прогуливаться
+- Give or take = approximately → приблизительно, плюс-минус
+- Put on the back burner = put off → отложить на потом, «в долгий ящик»
+- Cost a pretty penny = expensive → стоить целое состояние
+- Exhausted = tired → измотанный, без сил
+- Aka = also known as → он же; также известный как
+- Go for = choose → выбирать, останавливаться на
+- Be scared of → бояться чего-то
+- Tell the truth → говорить правду
+- Full-time job → работа на полную ставку
+- Part-time job → работа на неполную ставку, подработка
+- Give a hand = help → помочь
+- Different = various → разный, различный
+- Feel homesick → скучать по дому
+- Wrap my head around smt = understand, realize → уложить в голове, осознать
+- Make a choice → сделать выбор
+- Introduce (to) → представить, познакомить (с)
+- Gonna = going to → разг. сокращение going to («собираюсь»)
+- Wanna = want to → разг. сокращение want to («хочу»)
+- Gimme = give me → разг. сокращение give me («дай мне»)
+- Lemme = let me → разг. сокращение let me («дай-ка я»)
+- Wrap my head around sth = understand, realize, accept → уложить в голове, осознать, принять
+- Glance = look → взглянуть, бросить взгляд
+- Give smb a hand = help → помочь кому-то
+- Turn a blind eye to = ignore → закрывать глаза на
+- Scratch the surface → затронуть лишь поверхностно
+- Be drained = be exhausted → быть выжатым, обессиленным
+- Go for = choose → выбирать, останавливаться на
+- Walk-in closet → гардеробная
+- Get side-tracked → отвлечься от главного, сбиться с курса
+- Think on an empty stomach → думать на голодный желудок
+- Draw (drew, drawn) → рисовать; тянуть
+- Love you to the moon and back = love very much → люблю до луны и обратно, безмерно
+- Cheat meal/day → «читмил» — запланированное послабление в диете
+- Guilty pleasure → «постыдное» удовольствие
+- Mother-/father-in-law → тёща, свекровь / тесть, свёкор
+- Poor performance → слабые результаты, низкая продуктивность
+- Employee → наёмный работник, сотрудник
+- Turn out → оказаться, выясниться
+- Keep sth under the hat → держать в секрете, не разглашать
+- Resist the temptation → устоять перед искушением
+- Make efforts → прилагать усилия
+- Be born with a silver spoon in the mouth → родиться «с серебряной ложкой во рту», в богатой семье
+- Be overwhelmed with → быть переполненным, заваленным (делами, эмоциями)
+- Be through the roof → зашкаливать, быть запредельным
+- Pull one's leg = joke about sth → разыгрывать, подшучивать над
+- Drop the bomb → огорошить новостью
+- Everything but the kitchen sink → всё подряд, всё что только можно
+- So far so good → пока всё идёт хорошо
+- At the crack/break of dawn → ни свет ни заря, на рассвете
+- First and foremost = first things first → прежде всего, в первую очередь
+- Give or take = approximately → приблизительно, плюс-минус
+
+## Исключено вручную
+
+- At this moment
+- AT THIS MOMENT
+- Plenty of episodes
+- Real life situations
+- Slow development of plot
+- Unexpected pregnancy
+- A great number of characters
+- At the bookstore Where did you drop your ice-cream cone? (scoop)
+- Singing songs/serenades
+- Share things/emotions/feelings
+- Playing the piano in the night
+- Past Present Future
+- Might may Be able to
+- That question is discussed on a regular basis= regularly
+
+## Пропущенные строки
+
+- [April, 20] I was preparing for an interview
+- [April, 20] What did you miss?
+- [April, 20] What was unclear?
+- [April, 20] Present Continuous Tense
+- [April, 20] Be (am, is, are) + V+ing
+- [April, 20] Now
+- [April, 20] 1. Действие длится прямо сейчас
+- [April, 20] I'm sitting now.
+- [April, 20] She is talking now.
+- [April, 20] They are listening to music and eating a homemade apple pie.
+- [April, 20] 2. Планы на будущее
+- [April, 20] I'm flying to New-York tomorrow/next week.
+- [April, 20] I'm having a driving lesson tomorrow.
+- [April, 20] She is meeting her friend ON Wednesday.
+- [April, 20] She is seeing her friend.
+- [April, 20] Is she meeting her friends tomorrow?
+- [April, 20] What are you doing tmrw evening?
+- [April, 20] Where are you going?
+- [April, 20] She is not writing a letter now.
+- [April, 20] They are not singing now.
+- [April, 20] Исключения:
+- [April, 20] Know
+- [April, 20] Understand
+- [April, 20] Remember
+- [April, 20] Forget
+- [April, 20] Want
+- [April, 20] See
+- [April, 20] hear
+- [April, 20] smell
+- [April, 20] feel
+- [April, 20] like
+- [April, 20] believe
+- [April, 27] Daily appointment to the dentist decreased the level of my anxiety.
+- [April, 27] Present Simple Tense
+- [April, 27] Регулярное действие в настоящем
+- [April, 27] I we you they +V
+- [April, 27] He she it + Vs
+- [April, 27] I sometimes order take-away food.
+- [April, 27] I rarely go to bed before midnight.
+- [April, 27] My best friend cooks an apple pie every Sunday.
+- [April, 27] Вопр слово + do/does + подл + сказуемое
+- [April, 27] Does she like animals?
+- [April, 27] Does it taste good? (is it good?)
+- [April, 27] What do you drink every morning?
+- [April, 27] Where does your mum live?
+- [April, 27] What do you dream about?
+- [April, 27] How often do you go to the gym?
+- [April, 27] When do you want to change your job?
+- [April, 27] Do you play poker?
+- [April, 27] Does she have a dog?
+- [April, 27] Подл + don't/doesn't +V
+- [April, 27] I don't think so
+- [April, 27] She eats salad every day
+- [April, 27] She is eating salad now.
+- [April, 27] We are talking now
+- [April, 27] We talk every Sunday
+- [April, 27] Every day I eat meat then something sweet. I can't live without sweet. I have a sweet tooth. I spend approximately 30 min on making breakfast. Currently I
+- [May, 07] How much is a watermelon?
+- [May, 07] How much does a watermelon cost?
+- [May, 07] Can I get a discount?
+- [May, 07] [https://pp.vk.me/c605519/v605519263/730f/dYM8lyc0bQk.jpg]
+- [May, 07] I see three persons. A man and a woman are sitting at the table in a comfortable luxury restaurant. A server/waiter is standing behind and pouring red wine into an expensive glass. This place is empty this is why guests look relaxed and happy. I see starters on the table. They don't seem to be on a date. From my point of view, these people are mom and son having a business lunch.
+- [May, 11] A bird in hands is better than two in the bush
+- [May, 11] He liked the girl he still felt shy
+- [May, 11] Rise and shine!
+- [May, 11] I can't stand the rain
+- [May, 11] With – c ( кем-то)
+- [May, 11] He thought he wasn't attractive because he was thin. He needed to be athletic to get a girl.
+- [May, 28] Travelling
+- [May, 28] 1 learn more about the country you are going to visit
+- [May, 28] 2 make the route
+- [May, 28] 3 choose the season carefully
+- [May, 28] 4 get connection quickly
+- [May, 28] 5 get a taxi
+- [May, 28] 6 book the hotel in advance
+- [June, 01] The world is your oyster
+- [June, 01] Present Continuous Tense
+- [June, 01] NOW
+- [June, 01] Be (is am are) + V ing
+- [June, 01] 1. Действие происходит прямо сейчас (во время речи)
+- [June, 01] 2. Планы на будущее
+- [June, 01] + She is listening to jazz now and sipping a glass of white wine
+- [June, 01] They are watching a new blockbuster in the cinema/movie theatre
+- [June, 01] She is meeting with her ex- colleagues on Wednesday.
+- [June, 01] ? вопр слово + be + подл + Ving….
+- [June, 01] Are you sleeping now?
+- [June, 01] Is she reading a book?
+- [June, 01] When are you seeing your bestie?
+- [June, 01] Who are you talking to?
+- [June, 01] - She is not making dinner.
+- [June, 01] He is not walking to the restaurant. He is driving there.
+- [June, 01] Слова - исключения
+- [June, 01] Know/understand/forget/remember/believe
+- [June, 01] see/hear/feel/like/have
+- [June, 01] Want/love/hate
+- [June, 01] I'm having breakfast now. /I'm seeing her tmrw
+- [June, 01] ПЛАНЫ НА БУДУЩЕЕ
+- [June, 01] 1. Present Continuous Tense
+- [June, 01] 2. TO BE GOING TO +V (собираться сделать что-то, планы на будущее)
+- [June, 01] She is going to (gonna) make a cake in the evening
+- [June, 01] =
+- [June, 01] She is making a cake in the evening.
+- [June, 08] This ----- that
+- [June, 08] These -----those
+- [June, 08] I'm in my early 30-s
+- [June, 08] I'm in my late 30-s
+- [November, 22] Let's talk about fashion, shall we?
+- [November, 22] People got used to the concept of fast food.
+- [November, 22] People were sure to get the same quality in every McDonald's.
+- [November, 22] []
+- [November, 24] Green Peace are aimed not only at helping save nature but it also obliges company pay fines, penalties.
+- [November, 24] I see myself working
+- [November, 29] It takes me 1 and a half hours give or take to get to my parents' place
+- [November, 29] My bag costs 200 $ give or take
+- [November, 29] I sleep 8 hours give or take
+- [November, 29] What time did you go to bed yesterday?
+- [November, 29] How many fruits did you eat yesterday?
+- [November, 29] Where did you go last week?
+- [November, 29] Did you go on a business trip a week ago?
+- [November, 29] Were you at home yesterday?
+- [November, 29] I bought sneakers last Friday.
+- [November, 29] My parents flew to Italy two months ago. They sent me a lot of pictures.
+- [November, 29] I was born in 1965
+- [November, 29] I wrote this book two years ago
+- [November, 29] Was boss in the office on Friday.
+- [November, 29] Was this bag expensive?
+- [November, 29] Were they friends?
+- [November, 29] Did you sell your flat? How much did it cost? Were you happy when you sold it?
+- [November, 29] Did she cry when she learnt about her pregnancy?
+- [November, 29] How much did you pay for your new smile?
+- [November, 29] Could you help choose a laptop?
+- [November, 29] Past Simple Questions
+- [November, 29] Ago/last/yesterday/точная дата в прошлом
+- [November, 29] Вопр слово +Did + сущ+ глаг (наст вр) …..
+- [November, 29] Was the plane old?
+- [November, 29] How many sandwiches did you eat at the party?
+- [November, 29] Did she get money as a present?
+- [November, 29] Was the shop closed when you came there?
+- [November, 29] Did Peter invite you to his birthday party? Why not? Do you not communicate with him? Why does Peter make you angry? Was he rude with you yesterday?
+- [December, 01] If I crave something sweet, I drop in a café.
+- [December, 01] She doesn't need anybody's help. She works by herself/on her own
+- [December, 01] My child is four. He dresses by himself/on his own.
+- [December, 01] I – myself
+- [December, 01] We – ourselves
+- [December, 01] You – yourself
+- [December, 01] They -Themselves
+- [December, 01] She – herself
+- [December, 01] He -himself
+- [December, 01] There is/are
+- [December, 01] There are many people in the restaurant.
+- [December, 01] There is some cheese in the fridge.
+- [December, 01] There is some cash in the bag.
+- [December, 06] I'm pissed!
+- [December, 06] Should +V – дружеский совет (стоит сделать что-то)
+- [December, 06] We should meet more often!
+- [December, 06] I should read more.
+- [December, 06] You should practice more!
+- [December, 06] You shouldn't worry so much.
+- [December, 06] Should I cut my hair?
+- [December, 06] Should I watch English cartoons?
+- [December, 08] Who is Nasreddin?
+- [December, 08] Where did Nasreddin live?
+- [December, 08] Did he have pleasant neighbours?
+- [December, 08] Why no one like one neighbour?
+- [December, 08] What bad habit did this neighbour have?
+- [December, 08] What happened one early morning?
+- [December, 08] Who came to Nasreddin's house?
+- [December, 08] What favour did this woman ask for?
+- [December, 08] Why did Nasreddin shout?
+- [December, 08] Why did Nasreddin lie to his neighbour?
+- [December, 08] Why did the woman get angry with him?
+- [December, 08] What sounds did she hear?
+- [December, 08] What sounds made her angry?
+- [December, 20] I highly/strongly recommend you watch it!
+- [December, 20] Eye-opener – открытие, откровение, озарение
+- [December, 20] We are out of time
+- [December, 20] I value my own freedom and I respect the freedom of others.
+- [December, 22] LOOK
+- [December, 22] Comparative Form of Adjectives (сравнительная степень прил)
+- [December, 22] 1. короткое прил +er
+- [December, 22] Short – shorter
+- [December, 22] Long – longer
+- [December, 22] Young – younger
+- [December, 22] Small -smaller
+- [December, 22] 3. More + длинное прил
+- [December, 22] Influential – more influential
+- [December, 22] Exciting – more exciting
+- [December, 22] Исключения
+- [December, 22] Good – better
+- [December, 22] Bad – worse
+- [December, 22] Little – less
+- [December, 22] Far – further
+- [December, 22] Superlative form (превосходная форма)
+- [December, 22] 1. The короткое прил +est
+- [December, 22] The warmest
+- [December, 22] The merriest
+- [December, 22] The kindest
+- [December, 22] 2. The most +длинное прил
+- [December, 22] The most charming
+- [December, 22] The most pleasant
+- [December, 22] The most gorgeous
+- [December, 22] The most ridiculous
+- [December, 22] Исключения:
+- [December, 22] Good – better – the best
+- [December, 22] Bad – worse – the worst
+- [December, 22] Little – less – the least
+- [December, 22] Far – further – the furthest
+- [December, 22] This car is so comfortable as my previous one.
+- [December, 22] You are so funny as my best friend
+- [December, 22] Italy is not as expensive as France.
+- [December, 29] Present Perfect Tense
+- [December, 29] Have/has +V3
+- [December, 29] Слова- подсказки
+- [December, 29] Ever
+- [December, 29] Never
+- [December, 29] Just
+- [December, 29] Already
+- [December, 29] Recently недавно
+- [December, 29] Действие завершилось, а период времени, в который это действие происходило, нет.
+- [December, 29] I have already had a cup of coffee today.
+- [December, 29] _______ o_____ o _____o________ today
+- [December, 29] We have visited our parents twice this week
+- [December, 29] ________o________o_____________ this week
+- [December, 29] I have already been there. (today)
+- [December, 29] - Do you plan to do Christmas shopping?
+- [December, 29] - No, I've already bought presents.
+- [December, 29] I have already changed four companies.
+- [December, 29] ________ o o o o___________________ your life
+- [December, 29] ? вопр слово +have/has подл + V3……
+- [December, 29] Have you been abroad?
+- [December, 29] How many times have you been abroad?
+- [December, 29] Have you ever quarreled with your parents?
+- [December, 29] How many times have I told you not to smoke on the balcony?
+- [December, 29] Have you ever got red roses from a man?
+- [December, 29] ___________O__________________ life
+- [December, 29] - He hasn't called me yet.
+- [December, 29] - She hasn't told me about her problems.
+- [December, 29] How many cups of coffee do you drink every day?
+- [December, 29] How many cups of coffee did you drink yesterday?
+- [December, 29] How many cups of coffee have you already had?
+- [January, 03] Astonish
+- [January, 03] I don't mind (сущ) + Ving – я не против
+- [January, 03] How many subsidiaries does it have?
+- [January, 03] What is the role of the Tata group in India's economy?
+- [January, 03] How much do they generate abroad?
+- [January, 03] I don't mind hanging out a bit.
+- [January, 03] I've had two apples today. I've already called my grandma. I haven't tried this cake yet.
+- [January, 03] Yesterday I had two glasses of wine. Today I've already had one.
+- [January, 03] Have you already had lunch?
+- [January, 03] Have you already got presents?
+- [January, 03] Have you been outside today?
+- [January, 03] Where were you yesterday?
+- [January, 03] I've already had my perfect New-Year party/celebration.
+- [January, 10] Past Continuous Tense
+- [January, 10] Was/were + Ving
+- [January, 10] 1. Два действия происходят одновременно в прошлом, но одно действие длинное (что делал?), а второе действие короткое (что сделал?)
+- [January, 10] She was smoking when she saw her teacher.
+- [January, 10] We were talking when Mike approached us.
+- [January, 10] While she was sleeping, a few men cleaned up the street.
+- [January, 10] While I was shaving, someone knocked on the door.
+- [January, 10] The child was crying while I was drinking my tea.
+- [January, 10] 2. Точное время в прошлом
+- [January, 10] Yesterday at 8:15 p.m. I was taking a shower.
+- [January, 10] What were you doing yesterday at 7 p.m.? I was taking a nap
+- [January, 10] Were you thinking about me while riding a train?
+- [January, 10] 3. Показываем незаконченность действия
+- [January, 10] Whole last week I was reading that book.
+- [January, 10] When we met she was eating an ice-cream.
+- [January, 10] While I was sleeping my cats were having fun.
+- [January, 10] My mum invited me to celebrate her anniversary. I was talking to a friend when she called.
+- [January, 12] Be willing to +V – хотеть, желать
+- [January, 12] You shouldn't look down on people.
+- [January, 12] I always look up to my father. He is my role model.
+- [January, 12] When I leave the city my friends look after my cats.
+- [January, 12] Every morning I look through news feed.
+- [January, 12] I look forward to meeting you soon.
+- [January, 12] Will a foreigner be able to break down the reputation for weak management?
+- [January, 12] What opinion did the banker express?
+- [January, 12] Questions
+- [January, 12] 1. You've become a citizen of the UK. How does it feel?
+- [January, 12] When my private jet landed, British fresh air fascinated me. London surprised me with a wide range of nationalities. It is a melting pot.
+- [January, 12] 2. You've retired. Do you still consult with delicate issues?
+- [January, 12] I always stay in touch with the management of Tata. Especially when it comes to political issues
+- [January, 12] 3. We found a beautiful 357 tata in your garage. Do you sometimes drive it?
+- [January, 12] Thank you! you have great taste in cars. Despite the fact that I'm an old person I enjoy driving. For example I drove my grandchildren to sport school.
+- [January, 12] 4. Was it hard to step down the position of CEO and become just a pensioner? (was it a smooth transition from a CEO to a pensioner?)
+- [January, 12] I managed the company for over 50 years. I was fed up with it! But I realized it was time to give way to young generation. I couldn't keep up with changes in management.
+- [January, 12] It was not a step down. It was a step to freedom. It happened smoothly and my colleagues made me a farewell party.
+- [January, 12] 5. Did you relocate your whole family?
+- [January, 12] You know, I have a big wonderful family. A few family members are already here. A few of them refused to relocate they love India.
+- [January, 12] 6. Why did you choose London but not Edenborough?
+- [January, 12] 7. Have you ever taken Tube?
+- [January, 12] 8. Have you seen the latest episode of Mr. Bean?
+- [January, 12] 9. What disappointed you in London?
+- [January, 12] 10. What is your attitude to the current mayor of London?
+- [January, 12] 11. Do you have any political ambitions?
+- [January, 17] Spell it! = how do you spell it?
+- [January, 17] I need to look after kids today.
+- [January, 17] I want to look around the city
+- [January, 17] She looked away.
+- [January, 17] Look at this rhino!
+- [January, 17] Look back!
+- [January, 17] He always looks down on students.
+- [January, 17] I look forward to seeing my family again
+- [January, 17] Are you looking for a job?
+- [January, 17] Every morning I look through papers.
+- [January, 17] I don't know how to translate this word! Look it up in the dictionary!
+- [January, 17] I always look up to influential people.
+- [January, 24] Most people are both early birds and night owl.
+- [January, 24] What time did they serve breakfast in the hotel?
+- [January, 24] When did they arrive in Rome?
+- [January, 24] What did clerk ask the guests?
+- [January, 24] Who invited this granny?
+- [January, 24] What brought you here?
+- [January, 24] What made you cry?
+- [January, 24] Who broke my favourite glass?
+- [January, 24] Who will go to the theatre in the evening?
+- [January, 24] What makes you happy?
+- [January, 24] Who will buy me some milk?
+- [January, 24] Who has eaten my apple?
+- [January, 24] What surprised them (их) in the hotel?
+- [January, 24] What made Mrs. Williams disappointed?
+- [January, 24] They came to the hotel and checked in. The clerk invited them to have dinner. They were surprised that dinner was still available. They wanted to know the schedule of meals. They got disappointed that they didn't have time to see the sights of Rome
+- [January, 26] People (who are not afraid to admit their weaknesses) show strength.
+- [January, 26] I look through the paper and if some headlines catch my eye /attract my attention, I stop and read it.
+- [January, 26] I'm into fashion. She is into reading horror stories. I'm into travelling and exploring.
+- [January, 26] Last year I was enthusiastic about vising India. This year I changed my mind. I'd like visit Europe instead.
+- [February, 02] Will +V – спонтанное решение. Неточное решение (нет уверенности)
+- [February, 02] to be going to +V – собираюсь сделать (планы на будущее)
+- [February, 02] I'm going to take a photo of myself for documents.
+- [February, 02] He is going to the hospital this week.
+- [February, 02] We are not going to meet this week. = we aren't meeting this week.
+- [February, 02] He was going to buy a car but he changed his mind.
+- [February, 02] We weren't going to move to another city last year.
+- [February, 02] Are you going to change your job in the near future?
+- [February, 02] Were they going to rent a flat or book a hotel in Vienna?
+- [February, 02] How are you going to solve this issue?
+- [February, 02] Where are you going to stay overnight?
+- [February, 02] Have you watched South Park?
+- [February, 07] Who is absent/present today?
+- [February, 07] Mind:
+- [February, 07] Is it snowing now? – No, it isn't/Yes, it is
+- [February, 07] Do you like iced latte? – No, I don't/Yes, I certainly do
+- [February, 07] Did you take a nap yesterday afternoon? -No, I actually didn't/Yes, I did
+- [February, 07] Has Michael ever been abroad? – No, he hasn't / yes, he has.
+- [February, 07] Can you give money to this handsome guy? I can!
+- [February, 07] Was it raining yesterday? – it wasn't
+- [February, 07] Will you join us at the restaurant? – I won't
+- [February, 11] This – these
+- [February, 11] That – those
+- [February, 14] Общий вопрос
+- [February, 14] Do/does/did/will –
+- [February, 14] Специальный вопрос:
+- [February, 14] Вопросительное слово +…..
+- [February, 14] What/when/why/where/which/how/who
+- [February, 14] Альтернативный вопрос:
+- [February, 14] Уточняющий вопрос:
+- [February, 14] You like dogs, don't you?
+- [February, 14] She is at home now, isn't she?
+- [February, 14] He went to Paris last week, didn't he?
+- [February, 14] She won't be present at the meeting tomorrow, will she?
+- [February, 14] Jack has never been abroad before, has he?
+- [February, 14] Kids were playing football in the garden when the rain started yesterday, weren't they?
+- [February, 14] Вежливые вопросы:
+- [February, 14] Can/could you tell me
+- [February, 14] I wonder if you could tell me… + порядок слов утвердительного предложения
+- [February, 14] I'd like to know …. + утвердительное предложение
+- [February, 16] Cough (kАf) – кашлять
+- [February, 16] Sheet
+- [February, 16] You are going to spend your evening at home, aren't you?
+- [February, 16] You haven't been outside today, have you?
+- [February, 16] If he oversleeps, he is always annoyed/irritated/pissed
+- [February, 16] I'm interested in photography.
+- [February, 16] You woke up at 6 am, didn't you?
+- [February, 16] You look different. You have changed your hair color, haven't you?
+- [February, 16] You like oranges, don't you?
+- [February, 16] You are sitting in an armchair, aren't you?
+- [February, 16] Your pet looks hungry, doesn't it?
+- [February, 16] You were watching a series yesterday at 6 pm, weren't you?
+- [February, 16] When your kid came home yesterday, you were making a raspberry/cherry/strawberry/blackberry/blueberry/gooseberry pie, weren't you?
+- [February, 23] Used to +V – раньше делал что-то, сейчас – уже нет.
+- [February, 23] When I was a student, I used to eat junk food.
+- [February, 23] When I was younger, I used to go to music festivals.
+- [February, 23] Earlier my cat used to be calmer.
+- [February, 23] I used to catch up with my friends on a regular basis.
+- [February, 23] I used to work 24\7.
+- [February, 23] I used to sleep till noon.
+- [February, 23] Местоимения
+- [February, 23] I – my – me (mine)
+- [February, 23] We – our – us (ours)
+- [February, 23] You – your – you (yours)
+- [February, 23] He – his – him (his)
+- [February, 23] She – her – her (hers)
+- [February, 23] They – their - them (theirs)
+- [February, 23] It – its – it
+- [February, 28] Are you kidding me?
+- [February, 28] This is what Broadway famous for
+- [February, 28] The way I see it, senior women get carried away watching soap-operas. These days Turkish soap-operas are extremely popular in Russia. However, when I was a kid my grandma, sister and myself watched Argentinian and Brazilian soap-operas. They weren't bad at all because it was a combination of drama, romance and a pinch of comedy. Latin music was memorable too.
+- [February, 28] Every soap-opera offers emotional swings. One episode consists of short scenes.
+- [February, 28] TV
+- [February, 28] Interviews
+- [February, 28] Cartoons
+- [February, 28] Films (drama, soap-opera, comedy, series, sci-fi, reality shows, tragedy, sit -com, musical, documentaries)
+- [March, 02] Don't count your chickens before/until they hatch
+- [March, 02] relationships
+- [March, 02] why did Lucinda decide to leave Colin?
+- [March, 02] Who did she want to marry?
+- [March, 02] What plan did Colin have?
+- [March, 02] I wonder if Colin is a jealous person.
+- [March, 14] Where were we?
+- [March, 14] Despite + сущ – несмотря на
+- [March, 14] Despite my negative expectations the day was wonderful.
+- [March, 14] Although + сущ +гл – хотя
+- [March, 14] Although I had negative expectations, the day was amazing
+- [March, 16] -A gifted/talented director
+- [March, 16] - a well – coordinated team
+- [March, 16] - great music
+- [March, 16] - sense of humor
+- [March, 16] - actors
+- [March, 16] I see a girl who is enjoying her morning routine
+- [March, 16] I enjoy talking about politics
+- [March, 16] It seems that this girl is trying to do her best to look happy in the camera.
+- [March, 16] Her mother is ready to quit her job to be a manager of her daughter.
+- [March, 23] How many times have you been to St. Pete? – I've been there ten times give or take.
+- [March, 23] John was born with a silver spoon in the mouth. His parents expected him to continue their family business. They gave him great educational opportunities. They sent him to a private school. In this school he dived deep into studying process and did his best to make his parents happy. He finished his school with flying colours. His teachers were proud of him. John chose a prestigious Ivy League university on the East coast. Unexpectedly, his parents died (passed away) in a horrible car crash. He read about this accident in a social media. John broke down. Many people offered their help but our hero chose drugs. It is common for people from that environment. John got used to following his parents' advice. John wanted to get lost. His groupmate Albert invited him to a party to chill out. At this party he gave John some drugs. John got high and he liked this feeling. No pain, no stress, no pressure, no memories. No one was there to stop him. His relatives argued over family fortune. They didn't care about John at all. Moreover, rumor had it drug dealer worked for the family. Long story short, no one saw John at the university for a few months. Just one old drunk woman said to media that someone who looked like John was seen in that bar the other day. He was escorted/kicked out because he couldn't pay for a pint beer. He was broke. He couldn't make both ends meet.
+- [March, 23] I used to have long hair in my twenties.
+- [March, 23] I used to go to the gym 5 times a week
+- [March, 23] My mum used to call me every day.
+- [March, 23] I used to skip breakfast. Now I can't imagine my morning without breakfast.
+- [March, 23] My father used to go fishing with his buddies.
+- [March, 23] My father used to have a moustache.
+- [March, 23] I used to criticize my parents when I was younger.
+- [March, 23] My grandmother would comb my hair, tell me about her youth, sing me songs and so on.
+- [March, 28] My grandmother Who taught you to cook?
+- [March, 28] 67 How old was your grandmother when you travelled to Egypt?
+- [March, 28] About 20 minutes how long did you discuss the film after watching it?
+- [March, 28] How long does it take you to get from home to office?
+- [March, 28] How long did it take him to get from his house to the office
+- [March, 28] Baseball what sport do you dislike most of all?
+- [March, 28] At the post office where did you get your stylish shoes?
+- [March, 28] Tom Cruise who is the most famous member and activist oof scientology church?
+- [March, 28] What actor is addicted to adrenaline?
+- [March, 28] At 2:45 p.m. what time does the last lesson start in your school?
+- [March, 28] Salt and pepper what restaurant did you book a table in for today? What spices are your favourite?
+- [March, 28] More than $2000 how much does your ex husband owe you in alimony?
+- [March, 30] What were they busy with?
+- [March, 30] What was their flat full of?
+- [March, 30] Who rang at the door?
+- [March, 30] What did the lady look? Who did they see when they opened the door?
+- [March, 30] Why did she come to them?
+- [March, 30] What did she tell them about the neighbours?
+- [March, 30] What was so special about their block of flats in her opinion?
+- [March, 30] What shocked the lady next time she visited the Jones family?
+- [March, 30] How long did the Jones live in this place?
+- [March, 30] Have you ever been to Egypt?
+- [March, 30] I haven't been there since childhood
+- [March, 30] I have lived in Moscow for fifteen years
+- [March, 30] Were you born in Moscow? – No, I wasn't. I was born in another country.
+- [April, 01] Did you go outside yesterday? – I did/I didn't
+- [April, 01] Have you been outside today? –
+- [April, 01] Yesterday/last/ago/точная дата в прошлом – Past Simple (период времени прошлого, туда не нельзя вернуться и что-то там доделать/изменить)
+- [April, 01] Today, this (week, month, year, Friday), already, yet (еще не), ever (когда-либо), never, just (только, только что), recently (недавно) – Present Perfect (have/has +V3)
+- [April, 01] I've already had two cups of tea today
+- [April, 01] My mum has never been to the USA
+- [April, 01] I've seen two black people today.
+- [April, 01] My best friend has just passed a driving test.
+- [April, 01] I bought a new laptop last month.
+- [April, 01] Did you take part in the school reunion in March?
+- [April, 04] Исключения:
+- [April, 04] Good – better - the best
+- [April, 04] Bad - worse – the worst
+- [April, 04] Little – less – the least
+- [April, 04] Far – further/farther – the furthest /the farthest
+- [April, 04] What sport is your least favourite?
+- [April, 04] Have you noticed behaviour of this waiter?
+- [April, 04] How do you feel at job interviews?
+- [April, 06] Hot-tempered
+- [April, 06] 1. Can/could you tell me…..?
+- [April, 06] 2. I wonder If you could tell me…
+- [April, 06] 3. I'd like to know ….How big corruption is in Russia.
+- [April, 08] Remember
+- [April, 08] Recall
+- [April, 08] Recollect
+- [April, 08] The worst day!
+- [April, 08] 1. Not enough sleep ---- leads to bad mood, headache, irritation
+- [April, 08] 2. Disturbing alarm sound!
+- [April, 08] 3. No food in the house
+- [April, 08] 4. Getting a taxi
+- [April, 08] 5. Loud street noises in the middle of the night
+- [April, 08] 6. Urgent calls from crazy friends
+- [April, 08] 7. Low battery in the phone
+- [April, 08] 8. Unexpected change of weather
+- [April, 08] 9. No internet connection
+- [April, 11] I am interested in their conversations
+- [April, 11] Their conversations are interesting to me.
+- [April, 11] All they talk about is
+- [April, 11] Was it a crowded flight or were there empty seats?
+- [April, 11] Could you describe the person who was seating by the window?
+- [April, 11] What was he doing?
+- [April, 11] How long was the flight?
+- [April, 11] Why did you not sleep on the plane? How did you entertain yourself?
+- [April, 11] Should +V
+- [April, 13] But the silver lining is …..
+- [April, 13] Every 5^(th) person in Russia from 40 to 60 saves for a rainy day. Economic situation and fear of the future force population of RF save for a rainy day. But the silver lining is this hard period will be over soon.
+- [April, 13] These days many people turn to religion and traditions. They get united by their religion, traditions and identity. This is the blessing in disguise.
+- [April, 13] Should+ V – стоит, следует (рекомендация)
+- [April, 13] Have to +V – приходится, вынужден, надо
+- [April, 13] You should ask the flight attendant for sleeping pills.
+- [April, 13] You should pretend sleeping
+- [April, 13] You should try to breath slowly to relax your mind and let it go.
+- [April, 13] You shouldn't argue/quarrel with your neighbours. It is childish.
+- [April, 13] What is the problem with the neighbour?
+- [April, 13] What annoys you in this person?
+- [April, 13] What does she want?
+- [April, 13] Why does she make other neighbours crazy?
+- [April, 13] You should never help your neighbours!
+- [April, 13] You have to talk with her about her behaviour and personal borders.
+- [April, 13] You shouldn't fight with emotionally unstable people.
+- [April, 13] Who invited you to a dinner? (who washed your windows? what wants to go to the centre? What happened with your dog? Who is going to the countryside this weekend?
+- [April, 13] Who bought a house last week? What makes you sad? What is important for you?
+- [April, 13] What does this person hate?
+- [April, 13] You should pay a compliment for the dinner. It will break the ice.
+- [April, 13] You should say you are allergic to tomatoes.
+- [April, 13] You should be honest and strong and say you hate tomatoes.
+- [April, 15] You have a cat, don't you?
+- [April, 15] Anna is your sister, isn't she?
+- [April, 15] You are an engineer, aren't you?
+- [April, 15] She isn't at home, is she?
+- [April, 15] We didn't pay our rent last week, did we?
+- [April, 15] They were away the whole month, weren't they?
+- [April, 15] He bought a countryside house last year, didn't he?
+- [April, 15] She is sleeping now, isn't she?
+- [April, 15] They were playing tennis when the rain started, weren't they?
+- [April, 15] Nataly has been to Rome twice this year, hasn't she?
+- [April, 15] You have never seen a celebrity, have you?
+- [April, 15] It is sunny outside, isn't it?
+- [April, 15] You will pick me up from the airport, won't you?
+- [April, 15] She is going to quit smoking next Monday, isn't she?
+- [April, 15] She always arrives on time, doesn't she?
+- [April, 15] You speak English like a native, don't you?
+- [April, 15] She doesn't have enough free time, does she?
+- [April, 15] She has always interrupted my speech in public, hasn't she?
+- [April, 15] You didn't go/visit St. Petersburg last year, did you?
+- [April, 15] Present Perfect Tense
+- [April, 15] Have/has +V3
+- [April, 15] Have breakfast – I've already had breakfast
+- [April, 15] Have a shower – I've just had a shower
+- [April, 15] Have a conversation
+- [April, 18] Don't judge a book by its cover
+- [April, 18] She never drove a car, did she?
+- [April, 18] How did Mrs Jones become a criminal?
+- [April, 18] What was her driving experience?
+- [April, 18] How did she prove her eyesight was ok?
+- [April, 18] What did she take out of her handbag?
+- [April, 18] How many attempts did the judge take to put the thread through the needle's ear?
+- [April, 18] Did she succeed?
+- [April, 20] I'm able to
+- [April, 20] I will be able
+- [April, 20] I wasn't able to call you!
+- [April, 20] LOVE
+- [April, 20] Kisses/hugs
+- [April, 20] Presents/gifts
+- [April, 22] It is both confusing and inspiring at the same time
+- [April, 25] I can imagine what it is like to be in love with two people at the same time
+- [April, 29] He got carried away choosing food/ingredients for their romantic dinner
+- [April, 29] He didn't notice that it was getting dark.
+- [April, 29] He saw Mary who was standing behind him and smiling.
+- [April, 29] Match made in heaven!
+- [April, 29] Have you ever fallen in love with any country?
+- [April, 29] Did you travel alone or with somebody?
+- [May, 02] What was the last book you read?
+- [May, 02] What was the last present you gave to your mother/father?
+- [May, 02] What are your red flags on your first date?
+- [May, 02] How many children do you want to have?
+- [May, 02] What is your most cringe situation on a date?
+- [May, 02] What will you do with money if your husband is a millionaire?
+- [May, 06] Improve
+- [May, 06] Enhance
+- [May, 06] What is wrong in being selfish?
+- [May, 06] Responsible/irresponsible
+- [May, 09] 0. – аксиома (If +Present Simple, present simple)
+- [May, 09] If you don't sleep for too long, you are exhausted.
+- [May, 09] If you go outside in the rain, you get wet
+- [May, 09] Water boils if the temperature is 100 C
+- [May, 09] 1. Реальное событие в настоящем/будущем (If + present simple, will +V)
+- [May, 09] If you drink a cup of coffee in the morning, you will be very energetic.
+- [May, 09] You will be sleepy if you don't have a cup of coffee.
+- [May, 09] If you are a bad boy, you won't get a present from Santa!
+- [May, 09] If you wake up late, you will have to make breakfast yourself.
+- [May, 09] You won't get a career promotion If you don't work on holidays/weekends.
+- [May, 09] If you can't make this decision by yourself, you need more than a fortune teller.
+- [May, 09] I'm not paying it!
+- [May, 09] We've been happily married for 43 years
+- [May, 09] - спонтанное решение
+- [May, 09] If I was a policeman, I would say he was guilty.
+- [May, 11] The devil is in the detail
+- [May, 11] If you are open-minded and friendly, you will find yourself some great people to talk to.
+- [May, 11] You will find time for listening to fav music, reading that book you put on the back burner for a long time, drawing various sketches, writing in your diary if you take a long distance train trip
+- [May, 11] If I move to the USA, I will take thousands of photos.
+- [May, 11] If I take thousands of photos, I will choose the best ones and post them in my Instagram
+- [May, 11] If I post best pics in my Instagram, some people will ask me numerous/a ton of questions
+- [May, 11] If some people ask me a ton of questions, I will realize I can meet some of them in the USA.
+- [May, 11] If I meet some friends in the USA, we will talk about motherland for hours.
+- [May, 11] If we talk about Russia for hours, we'll feel bored and exhausted and will head to Madonna's concert.
+- [May, 11] If we go to Madonna's concert, we'll listen to her stunning brand-new album.
+- [May, 11] If I have sessions with a pshychologist….
+- [May, 13] I have to stay home. I'm broke, man!
+- [May, 13] Good – better – the best
+- [May, 13] Bad – worse – the worst
+- [May, 13] Little – less – the least
+- [May, 13] Far – further – the furthest
+- [May, 13] Do I have to speak at the conference???
+- [May, 13] I had to quit. I couldn't find common language/get on with my boss.
+- [May, 13] Do you have to work on Saturday?
+- [May, 13] Did you have to sell your car?
+- [May, 13] Does she have to look after (take care of) her neighbour's cat????
+- [May, 13] Madonna sings better than any other female singer in the world.
+- [May, 13] She makes less than me!
+- [May, 13] The weather today is worse than yesterday
+- [May, 13] The theatre is located further than I expected
+- [May, 16] I can't get on with nervous people. They annoy me
+- [May, 16] This suit suits you well.
+- [May, 16] Those glasses don't suit your outfit
+- [May, 16] Guys, playing football in the park, are my friends
+- [May, 16] Drinking coffee, I spilled a few drops onto my white shirt.
+- [May, 16] Drinking coffee, I was watching cleaners wash my windows.
+- [May, 16] I'm not going to help you.
+- [May, 16] She was going to sell her car but then she changed her mind.
+- [May, 16] I want you to be happy so I'm going to tell you the truth/I'm not going to lie.
+- [May, 16] Complex Object
+- [May, 16] I want you to help me
+- [May, 16] I expect you to be more polite.
+- [May, 16] My father believes this man to be honest.
+- [May, 16] 1 глаголы желания + to
+- [May, 16] 2 знание, понимание + to
+- [May, 16] 3 let (let me speak), make (don't make me cry)
+- [May, 16] 4 глаголы чувства и восприятия (see, hear, watch, notice…)
+- [May, 16] []
+- [May, 16] I want you to look at this picture.
+- [May, 18] I have nothing in common with him.
+- [May, 18] What do you have in common with your husband?
+- [May, 18] It was difficult/hard/challenging/complicated. But I managed to find common language with this person
+- [May, 18] I can't go to the café with you. I've run out of money.
+- [May, 18] Speak faster! I'm running out of patience.
+- [May, 18] I ran out of patience and argued with my father yesterday.
+- [May, 18] Could you spell it for me/please?
+- [May, 18] I have three meetings back-to-back.
+- [May, 18] I have already eaten three ice-creams back-to-back.
+- [May, 18] I was gonna do this whole haul stuff yesterday.
+- [May, 18] Are you gonna order sushi today?
+- [May, 18] You were going to make a cherry pie yesterday. Did you do it?
+- [May, 18] We are going out of the city tomorrow. Do you want to join us? (wanna join?)
+- [May, 18] He was going to talk to you yesterday. Did he do it?
+- [May, 20] We have 5 minutes left.
+- [May, 23] Likely/unlikely
+- [May, 23] You are not obliged to work with those who are unpleasant to you.
+- [May, 25] Despite my noise cancelling earphones I still hear baby's screams.
+- [May, 25] If my friend relocates abroad, I will be happy for him.
+- [May, 27] Tell + объект – сказать, рассказать
+- [May, 27] Say +to + объект -сказать
+- [May, 30] She hated cooking. But she ended up working a chef.
+- [May, 30] He wanted to live on a calm and relaxed beach. He ended up living in Wall street.
+- [May, 30] Used to + глагол – описываем опыт прошлого, который в настоящем не релевантен
+- [May, 30] I used to be overweight. Now I stick to a diet and go for a run every morning.
+- [May, 30] My mum used to be a workaholic. Now she learned to relax.
+- [May, 30] I used to stay up late. Now I go to bed before midnight.
+- [June, 03] Whatever
+- [June, 03] Makes sense!
+- [June, 03] Does it make any sense?
+- [June, 03] Why do they need to push further into the market?
+- [June, 03] Why is now a good moment to push …..
+- [June, 03] When are they going to launch their new fragrance?
+- [June, 03] What is their market share now?
+- [June, 03] Why do they need to rush with the launch?
+- [June, 03] What does AIDA mean?
+- [June, 06] Would/do you mind if….+ past simple
+- [June, 06] People have a lot of fears and doubts in their head.
+- [June, 06] II Conditional
+- [June, 06] If + past simple, Would +V – мечты и фантазии
+- [June, 06] If I had enough money, I would travel with all my friends.
+- [June, 06] If scientists created cure for cancer, people would live longer.
+- [June, 06] I would go travelling around the world If I were you.
+- [June, 06] If I were born in Indonesia, I would be a happy man.
+- [June, 06] If I got technical education, I would work in IT sphere and make a fortune.
+- [June, 06] Be going to +V
+- [June, 06] Have to +V – надо, нужно, приходится
+- [June, 08] My leg was hurting. My leg was swollen. I was lucky I wasn't there alone. My friend was there with me and he communicated with nurses trying to help me. He drove me to the hospital. Later he carried me in his hands to my own bike.
+- [June, 08] It took three months to recover.
+- [June, 08] Hot (жаркий) – heat (жара)
+- [June, 08] Where would you move to if you were offered to move to Asia or Europe?
+- [June, 08] If I were offered to move to Europe or Asia, I would still go for Europe.
+- [June, 08] If I had a chance to move to Europe, I would ask myself what part of Europe appeals to me.
+- [June, 08] If you ask me now, I can't answer this question.
+- [June, 10] Do you mind if…..?
+- [June, 10] TGIF- thanks God it's Friday!
+- [June, 10] If I were a girl, I would have long hair
+- [June, 10] I would fly if I had wings
+- [June, 10] If I were you, you would be me
+- [June, 10] If I could meet King Charles, I would ask him how dare he…!
+- [June, 10] She would pass her exam if her mother arrived from Spain.
+- [June, 10] What would you do if everything were an illusion?
+- [June, 10] If I didn't have a house in Moscow, I would be in Argentina this summer.
+- [June, 10] You don't have to wait for me.
+- [June, 10] He has to apologize for his words.
+- [June, 10] Do I have to pay for this bun?
+- [June, 10] I didn't have to fix my car yesterday.
+- [June, 13] I allow myself to have
+- [June, 13] Used to +V – раньше делал что-то, сейчас – уже нет.
+- [June, 13] It used to be popular in the 90-s
+- [June, 13] I used to hate going to village but now I like to be here. It is a change of scenery for me
+- [June, 13] Who wrote the text?
+- [June, 15] I'll have to disturb you
+- [June, 15] You shouldn't interfere with our conversation
+- [June, 15] While I was having breakfast my best friends came in.
+- [June, 15] I've just finished my shopping.
+- [June, 15] Modal Verbs
+- [June, 15] -----------------------------------------------------------------------------------------
+- [June, 15] ----------------------------------------- ----------------------- -----------------------
+- [June, 15] could can Be able to
+- [June, 15] Had to must Will have to
+- [June, 15] Had to Have to Will have to
+- [June, 15] Should/ought have+V3 (совет постфактум) Should/ought to ------------
+- [June, 15] -----------------------------------------------------------------------------------------
+- [June, 15] I will not be able to give you a piece of advice
+- [June, 15] She can speak Spanish. He can't dance.
+- [June, 15] I may not help resolve this conflict.
+- [June, 15] I will have to spend money on a new vacuum cleaner.
+- [June, 15] Will you have to talk to your ex?
+- [June, 15] You shouldn't cry over it.
+- [June, 15] You should have put some salt in the fried eggs.
+- [June, 15] Why has she done it? Why did she do it?
+- [June, 15] What troubles did she have?
+- [June, 15] Where did she go?
+- [June, 15] Why did he send her to the hospital?
+- [June, 15] What did she do in the hospital?
+- [June, 15] Why did he call her the next morning?
+- [June, 15] When did he call her?
+- [June, 15] What recommendations did the doctor give to Mrs. Black?
+- [June, 15] What did she do with these recommendations?
+- [June, 15] Why did she leave the house?
+- [June, 15] What was her husband holding in his hands?
+- [June, 15] What was in the basket?
+- [June, 15] Why did he do it?
+- [June, 17] I'm gonna miss him and the time we spent together talking about anything and everything
+- [June, 17] Your driving lessons aren't over yet, are they?
+- [June, 17] What should I do?
+- [June, 17] After I pass my exam, I'm not going to stop learning and practicing. I strive to learn extreme driving.
+- [June, 17] I'm not driving. I'm sitting in the study in front of laptop. I'm talking to you.
+- [June, 20] You are nothing but a cog in the machine
+- [June, 22] Have skeletons in the closet
+- [June, 22] Do my best -
+- [June, 22] Conditional sentences (if)
+- [June, 22] 1. Present +present (аксиома)
+- [June, 22] If you heat ice, it melts
+- [June, 22] If you don't water your plant, it dies
+- [June, 22] If you turn off your fridge, food spoils
+- [June, 22] 2. If + present, will (реальная ситуация в настоящем/будущем)
+- [June, 22] If you do doomscrolling, you'll feel better.
+- [June, 22] You will feel better if you tell the truth
+- [June, 22] I'll buy you an ice-cream If I go outside.
+- [June, 22] 3. If + past simple, would+V (мечты и фантазии: если БЫ)
+- [June, 22] If I were Bernard Arno, I would invest heavily in funds helping women.
+- [June, 22] I would destroy everything If I were a powerful magic beast.
+- [June, 22] If I visited to Hollywood, I would definitely go to Madonna's concert.
+- [June, 22] If I moved to Hollywood, I would find Russian community and celebrate.
+- [June, 22] 4. If + Past Perfect, would have +V3
+- [June, 27] Passive Voice
+- [June, 27] Be +V3
+- [June, 27] 1. Present Simple (be =is am are +V3)
+- [June, 27] Strawberry pie is made every Sunday
+- [June, 27] How often is strawberry pie made?
+- [June, 27] 2. Present Continuous (прямо сейчас длится действие) Be+being +V3
+- [June, 27] Strawberry pie is being made now
+- [June, 27] What pie is being made now?
+- [June, 27] 3. Present Perfect (have/has+been+V3)
+- [June, 27] Strawberry pie has just been made.
+- [June, 27] What pie has just been made?
+- [June, 27] When was strawberry pie made?
+- [June, 27] 4. Past Simple
+- [June, 27] Strawberry pie was made in the evening/yesterday by my mom.
+- [June, 27] What was made yesterday evening by my mom?
+- [June, 27] 5. Past Continuous (was/were + being +V3) (1. два действия происходили одновременно в прошлом. 2. точное время в прошлом)
+- [June, 27] Strawberry pie was being made when my friends came over.
+- [June, 27] Yesterday at 7 pm strawberry pie was being made.
+- [June, 27] What was being made when friends came over?
+- [June, 27] 6. Past Perfect (had been +V3)
+- [June, 27] Strawberry pie had been made (1) when my friends came (2) over.
+- [June, 27] Had strawberry been eaten when friends came over?
+- [June, 27] 7. Future Simple (will be +V3)
+- [June, 27] Strawberry pie will be made tomorrow
+- [June, 27] 8. Future Perfect Passive ( will have been +V3) действие будет закончено к определенному моменту в будущем.
+- [June, 27] Strawberry pie will have been made by the evening.
+- [June, 27] Bridge will have been built by the fourth quarter of the year.
+- [June, 29] Be in the eye of the storm = be in the center of a controversial difficult crisis
+- [June, 29] If I have part-time job, I will deliver flowers.
+- [June, 29] If I study, I will get a permission to work part-time
+- [July, 01] Employer
+- [July, 01] Employee
+- [July, 01] I have been unemployed for two years.
+- [July, 01] Have you ever been unemployed?
+- [July, 01] Be +V3
+- [July, 01] I was met by my friends
+- [July, 01] Decision will be made tomorrow
+- [July, 01] These books were bought the day before yesterday.
+- [July, 01] The salad is being made right now.
+- [July, 01] The building will have been finished by the end of the second quarter.
+- [July, 01] You will appreciate this humor! I'm telling you!
+- [July, 04] Have a lot/a little/nothing in common (with)
+- [July, 04] Talk the talk but don't walk the walk
+- [July, 04] Strawberries are a dime a dozen
