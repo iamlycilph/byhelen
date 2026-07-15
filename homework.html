@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="icon.png">
+<title>Домашка · уроки с Еленой</title>
+<style>
+:root{
+  --paper:#F3F4F0; --ink:#22301F; --muted:#8A9086; --line:#E3E5DD;
+  --card:#FFFFFF; --mark:#FFE066; --ok:#2F7D5B; --bad:#C4452C;
+  --serif:"Iowan Old Style",Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:var(--sans)}
+body{padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+.wrap{max-width:560px;margin:0 auto;padding:12px 16px 40px}
+header{display:flex;align-items:baseline;justify-content:space-between;margin:6px 0 14px}
+header h1{font-family:var(--serif);font-size:22px;margin:0;font-weight:600}
+header .sub{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+nav{display:flex;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:16px}
+nav button{flex:1;border:0;background:transparent;font:600 15px var(--sans);color:var(--muted);padding:10px 0;border-radius:9px;cursor:pointer}
+nav button.on{background:var(--ink);color:var(--paper)}
+.mark{display:inline;background:linear-gradient(104deg,transparent 2%,var(--mark) 3%,var(--mark) 97%,transparent 98%);
+  padding:2px 8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.btn{display:block;width:100%;border:0;border-radius:12px;padding:14px;margin-top:16px;
+  background:var(--ink);color:var(--paper);font:600 16px var(--sans);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.cbtn{border:0;background:none;font-size:12px;color:var(--muted);cursor:pointer;padding:10px 0 0;text-decoration:underline}
+.prog{font-size:13px;color:var(--muted);margin:0 2px 8px}
+
+/* список тестов */
+.tcard{margin-bottom:12px}
+.tcard h2{font-family:var(--serif);font-size:19px;margin:0 0 4px;font-weight:600}
+.tcard .topics{font-size:12px;color:var(--muted);margin:0 0 2px}
+.tcard .meta{font-size:13px;color:var(--muted);margin:0}
+.tcard .best{color:var(--ok);font-weight:600}
+
+/* вопрос */
+.sentence{font-family:var(--serif);font-size:21px;line-height:1.7;margin-bottom:14px}
+.slot{display:inline-block;min-width:56px;background:var(--paper);
+  border-bottom:2px solid var(--muted);border-radius:4px 4px 0 0}
+.fill{color:var(--ok);font-weight:700;border-bottom:2px solid var(--ok)}
+.sentence mark,.mist mark{background:linear-gradient(104deg,transparent 2%,var(--mark) 3%,var(--mark) 97%,transparent 98%);
+  color:inherit;padding:1px 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opts button{border:1px solid var(--line);background:var(--paper);border-radius:12px;
+  padding:13px 14px;font:15px var(--sans);color:var(--ink);text-align:left;cursor:pointer;min-height:44px}
+.opts button .lt{color:var(--muted);font-weight:600;margin-right:8px}
+.opts button.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.opts button.bad{background:var(--bad);border-color:var(--bad);color:#fff;animation:sh .25s}
+.opts button.ok .lt,.opts button.bad .lt{color:#fff;opacity:.85}
+.opts button.faded{opacity:.45}
+.opts button:disabled{cursor:default}
+@keyframes sh{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+@media (prefers-reduced-motion:reduce){.opts button.bad{animation:none}}
+.why{background:var(--paper);border-left:3px solid var(--mark);padding:8px 12px;
+  font-size:14px;line-height:1.5;margin-top:12px}
+
+/* итог */
+.result{text-align:center;padding:10px 0}
+.result .big{font-family:var(--serif);font-size:40px}
+.result .sub{font-size:13px;color:var(--muted);margin-top:4px}
+h3.sec{font-size:12px;letter-spacing:.4px;text-transform:uppercase;color:var(--muted);
+  font-weight:600;margin:20px 2px 8px}
+.mist{margin-bottom:10px;font-size:15px}
+.mist .n{font-size:12px;color:var(--muted);margin-bottom:4px}
+.mist .sen{font-family:var(--serif);font-size:17px;line-height:1.6}
+.mist .yours{color:var(--bad);font-size:13px;margin-top:6px}
+.mist .w{color:var(--muted);font-size:13px;margin-top:4px}
+button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><span class="mark">Домашка</span></h1>
+    <span class="sub" id="hProg"></span>
+  </header>
+  <nav>
+    <button id="nav-quiz">Квиз</button>
+    <button id="nav-dict">Словарь</button>
+    <button id="nav-hw" class="on">Домашка</button>
+  </nav>
+
+  <section id="vList"></section>
+
+  <section id="vQuiz" hidden>
+    <p class="prog" id="qNum"></p>
+    <div class="panel sentence" id="qSentence" aria-live="polite"></div>
+    <div class="opts" id="qOpts"></div>
+    <div class="why" id="qWhy" hidden></div>
+    <button id="btnNext" class="btn" hidden>Дальше</button>
+    <button id="btnQuit" class="cbtn">← к списку тестов</button>
+  </section>
+
+  <section id="vResult" hidden></section>
+</div>
+
+<script src="homework-data.js"></script>
+<script>
+(function(){
+  "use strict";
+  var TESTS = window.HOMEWORK_TESTS || [];
+  var LS_KEY = "hwBest";
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* ---------- чистые функции (используются и автотестами) ---------- */
+
+  // Пропуски "___" + части варианта → сегменты {t:"text"|"fill", v}.
+  // Части с апострофа ('m, 're, 's) приклеиваются без пробела.
+  function assemble(sentence, option){
+    var gaps = sentence.split("___");
+    var parts = option.split(" / ");
+    var seg = [{t:"text", v:gaps[0]}];
+    for (var i=0; i<parts.length; i++){
+      var p = parts[i];
+      if (p.charAt(0) === "'"){
+        var last = seg[seg.length-1];
+        if (last.t === "text") last.v = last.v.replace(/\s+$/,"");
+      }
+      seg.push({t:"fill", v:p});
+      seg.push({t:"text", v:gaps[i+1] || ""});
+    }
+    return seg;
+  }
+
+  function assembleText(sentence, option){
+    return assemble(sentence, option).map(function(s){return s.v;}).join("")
+      .replace(/\s+([?.!,])/g, "$1").replace(/\s{2,}/g, " ").trim();
+  }
+
+  function esc(s){
+    return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+
+  // Подсветка ключей только в тексте, не внутри тегов.
+  function markKeys(html, keys){
+    if (!keys || !keys.length) return html;
+    var chunks = html.split(/(<[^>]+>)/);
+    keys.forEach(function(k){
+      var ek = esc(k), done = false;
+      for (var i=0; i<chunks.length && !done; i++){
+        if (chunks[i].charAt(0) === "<") continue;
+        var at = chunks[i].indexOf(ek);
+        if (at >= 0){
+          chunks[i] = chunks[i].slice(0,at) + "<mark>" + ek + "</mark>" + chunks[i].slice(at+ek.length);
+          done = true;
+        }
+      }
+    });
+    return chunks.join("");
+  }
+
+  function sentenceHTML(sentence, option, keys){
+    if (option === null){
+      return sentence.split("___").map(esc).join('<span class="slot">&nbsp;&nbsp;&nbsp;</span>');
+    }
+    var html = assemble(sentence, option).map(function(s){
+      return s.t === "fill" ? '<span class="fill">'+esc(s.v)+'</span>' : esc(s.v);
+    }).join("");
+    return markKeys(html, keys);
+  }
+
+  /* ---------- состояние ---------- */
+  var st = { test:null, i:0, score:0, wrong:[] };
+
+  function best(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||"{}"); }catch(e){ return {}; } }
+  function saveBest(id, val){
+    try{
+      var b = best();
+      if (!(id in b) || val > b[id]){ b[id] = val; localStorage.setItem(LS_KEY, JSON.stringify(b)); }
+    }catch(e){}
+  }
+
+  function show(view){
+    ["vList","vQuiz","vResult"].forEach(function(v){ $(v).hidden = (v !== view); });
+    if (view === "vList") $("hProg").textContent = "";
+  }
+
+  /* ---------- список тестов ---------- */
+  function renderList(){
+    var box = $("vList"); box.innerHTML = "";
+    var b = best();
+    TESTS.forEach(function(t){
+      var card = document.createElement("div"); card.className = "panel tcard";
+      var h = document.createElement("h2"); h.textContent = t.title; card.appendChild(h);
+      var tp = document.createElement("p"); tp.className = "topics";
+      tp.textContent = t.topics.join(" · "); card.appendChild(tp);
+      var m = document.createElement("p"); m.className = "meta";
+      m.textContent = t.tasks.length + " заданий";
+      if (t.id in b){
+        m.appendChild(document.createTextNode(" · "));
+        var s = document.createElement("span"); s.className = "best";
+        s.textContent = "лучший: " + b[t.id] + "/" + t.tasks.length;
+        m.appendChild(s);
+      }
+      card.appendChild(m);
+      var btn = document.createElement("button"); btn.className = "btn";
+      btn.textContent = "Начать";
+      btn.onclick = function(){ startTest(t); };
+      card.appendChild(btn);
+      box.appendChild(card);
+    });
+    show("vList");
+  }
+
+  /* ---------- прохождение ---------- */
+  function startTest(t){
+    st.test = t; st.i = 0; st.score = 0; st.wrong = [];
+    show("vQuiz");
+    renderTask();
+  }
+
+  function progLine(){
+    var t = st.test;
+    $("hProg").textContent = (st.i+1) + " / " + t.tasks.length;
+    $("qNum").textContent = "Задание " + (st.i+1) + " из " + t.tasks.length +
+      " · верно: " + st.score;
+  }
+
+  function renderTask(){
+    var task = st.test.tasks[st.i];
+    progLine();
+    $("qSentence").innerHTML = sentenceHTML(task.s, null, null);
+    $("qWhy").hidden = true;
+    $("btnNext").hidden = true;
+
+    var box = $("qOpts"); box.innerHTML = "";
+    task.o.forEach(function(optText, idx){
+      var b = document.createElement("button");
+      b.className = "opt"; b.dataset.idx = idx;
+      var lt = document.createElement("span"); lt.className = "lt";
+      lt.textContent = "ABCD".charAt(idx) + ")";
+      b.appendChild(lt);
+      b.appendChild(document.createTextNode(optText));
+      b.onclick = function(){ answer(idx); };
+      box.appendChild(b);
+    });
+  }
+
+  function answer(idx){
+    var t = st.test, task = t.tasks[st.i];
+    var right = (idx === task.a);
+    if (right) st.score++;
+    else st.wrong.push({ n: st.i+1, task: task, chosen: idx });
+
+    var btns = $("qOpts").querySelectorAll(".opt");
+    btns.forEach(function(b){
+      b.disabled = true;
+      var i = +b.dataset.idx;
+      if (i === task.a) b.classList.add("ok");
+      else if (i === idx) b.classList.add("bad");
+      else b.classList.add("faded");
+    });
+
+    // правильная форма встаёт в предложение, ключи подсвечиваются маркером
+    $("qSentence").innerHTML = sentenceHTML(task.s, task.o[task.a], task.keys);
+    progLine();
+
+    var why = $("qWhy");
+    why.innerHTML = (right ? "<b>Верно.</b> " : "<b>Правильно: " +
+      "ABCD".charAt(task.a) + ") " + esc(task.o[task.a]) + ".</b> ") + esc(task.why);
+    why.hidden = false;
+
+    var next = $("btnNext");
+    next.textContent = (st.i === t.tasks.length-1) ? "Итоги" : "Дальше";
+    next.hidden = false;
+    next.onclick = function(){
+      if (st.i === t.tasks.length-1) renderResult();
+      else { st.i++; renderTask(); }
+    };
+  }
+
+  /* ---------- итог ---------- */
+  function renderResult(){
+    var t = st.test, total = t.tasks.length;
+    saveBest(t.id, st.score);
+    var box = $("vResult"); box.innerHTML = "";
+    $("hProg").textContent = "";
+
+    var sc = document.createElement("div"); sc.className = "panel result";
+    sc.innerHTML = '<div class="big">' + st.score + " / " + total + "</div>" +
+      '<div class="sub">' + (st.wrong.length ? "Разбор ошибок ниже — с ним к Елене." :
+      "Без ошибок.") + "</div>";
+    box.appendChild(sc);
+
+    if (st.wrong.length){
+      var h = document.createElement("h3"); h.className = "sec";
+      h.textContent = "Разбор ошибок"; box.appendChild(h);
+      st.wrong.forEach(function(w){
+        var d = document.createElement("div"); d.className = "panel mist";
+        d.innerHTML =
+          '<div class="n">№ ' + w.n + "</div>" +
+          '<div class="sen">' + sentenceHTML(w.task.s, w.task.o[w.task.a], w.task.keys) + "</div>" +
+          '<div class="yours">Твой ответ: ' + "ABCD".charAt(w.chosen) + ") " +
+            esc(w.task.o[w.chosen]) + "</div>" +
+          '<div class="w">' + esc(w.task.why) + "</div>";
+        box.appendChild(d);
+      });
+    }
+
+    var again = document.createElement("button"); again.className = "btn";
+    again.textContent = "Пройти ещё раз";
+    again.onclick = function(){ startTest(t); };
+    box.appendChild(again);
+
+    var back = document.createElement("button"); back.className = "btn ghost";
+    back.textContent = "К списку тестов";
+    back.onclick = renderList;
+    box.appendChild(back);
+
+    show("vResult");
+  }
+
+  /* ---------- навигация ---------- */
+  $("nav-quiz").onclick = function(){ location.href = "index.html"; };
+  $("nav-dict").onclick = function(){ location.href = "index.html#dict"; };
+  $("nav-hw").onclick = renderList;
+  $("btnQuit").onclick = renderList;
+
+  // для автотестов
+  window.__hw = { assemble: assemble, assembleText: assembleText,
+                  sentenceHTML: sentenceHTML, state: st, start: startTest,
+                  renderList: renderList };
+
+  renderList();
+})();
+</script>
+</body>
+</html>
