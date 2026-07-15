@@ -30,8 +30,11 @@ nav button.on{background:var(--ink);color:var(--paper)}
 .btn{display:block;width:100%;border:0;border-radius:12px;padding:14px;margin-top:16px;
   background:var(--ink);color:var(--paper);font:600 16px var(--sans);cursor:pointer}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
-.cbtn{border:0;background:none;font-size:12px;color:var(--muted);cursor:pointer;padding:10px 0 0;text-decoration:underline}
+.cbtn{border:0;background:none;font-size:12px;color:var(--muted);cursor:pointer;padding:4px 0;text-decoration:underline}
 .prog{font-size:13px;color:var(--muted);margin:0 2px 8px}
+.seg{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:14px}
+.seg button{flex:1;border:0;background:var(--paper);padding:10px;font:600 14px var(--sans);color:var(--muted);cursor:pointer}
+.seg button.on{background:var(--ink);color:var(--paper)}
 
 /* список тестов */
 .tcard{margin-bottom:12px}
@@ -72,6 +75,23 @@ h3.sec{font-size:12px;letter-spacing:.4px;text-transform:uppercase;color:var(--m
 .mist .sen{font-family:var(--serif);font-size:17px;line-height:1.6}
 .mist .yours{color:var(--bad);font-size:13px;margin-top:6px}
 .mist .w{color:var(--muted);font-size:13px;margin-top:4px}
+
+/* статистика */
+.trow{display:flex;align-items:baseline;gap:8px;padding:8px 2px;border-bottom:1px solid var(--line)}
+.trow:last-child{border:0}
+.trow .name{flex:1;font-size:14px}
+.trow .cnt{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{height:4px;background:var(--paper);border-radius:2px;overflow:hidden;margin-top:5px}
+.bar i{display:block;height:100%;background:var(--bad)}
+.hrow{display:flex;gap:8px;padding:8px 2px;border-bottom:1px solid var(--line);
+  font-size:13px;color:var(--muted)}
+.hrow:last-child{border:0}
+.hrow .d{width:88px;flex:none;font-variant-numeric:tabular-nums}
+.hrow .t{flex:1;color:var(--ink)}
+.hrow .s{font-variant-numeric:tabular-nums}
+.empty{font-size:13px;color:var(--muted);padding:4px 2px}
+.foot{margin-top:22px;font-size:12px;color:var(--muted)}
+.foot button{margin-right:12px}
 button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
 </style>
 </head>
@@ -87,7 +107,13 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
     <button id="nav-hw" class="on">Домашка</button>
   </nav>
 
+  <div class="seg" id="hwTabs">
+    <button id="seg-tests" class="on">Тесты</button>
+    <button id="seg-stats">Статистика</button>
+  </div>
+
   <section id="vList"></section>
+  <section id="vStats" hidden></section>
 
   <section id="vQuiz" hidden>
     <p class="prog" id="qNum"></p>
@@ -99,6 +125,13 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
   </section>
 
   <section id="vResult" hidden></section>
+
+  <div class="foot" id="foot">
+    История попыток живёт в этом браузере.
+    <button class="cbtn" id="btnExp">Экспорт истории</button>
+    <button class="cbtn" id="btnImp">Импорт</button>
+    <input type="file" id="impFile" accept=".json" hidden>
+  </div>
 </div>
 
 <script src="homework-data.js"></script>
@@ -106,13 +139,11 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
 (function(){
   "use strict";
   var TESTS = window.HOMEWORK_TESTS || [];
-  var LS_KEY = "hwBest";
+  var K_BEST = "hwBest", K_LOG = "hwLog";
   var $ = function(id){ return document.getElementById(id); };
 
   /* ---------- чистые функции (используются и автотестами) ---------- */
 
-  // Пропуски "___" + части варианта → сегменты {t:"text"|"fill", v}.
-  // Части с апострофа ('m, 're, 's) приклеиваются без пробела.
   function assemble(sentence, option){
     var gaps = sentence.split("___");
     var parts = option.split(" / ");
@@ -138,7 +169,6 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
     return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
   }
 
-  // Подсветка ключей только в тексте, не внутри тегов.
   function markKeys(html, keys){
     if (!keys || !keys.length) return html;
     var chunks = html.split(/(<[^>]+>)/);
@@ -166,33 +196,56 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
     return markKeys(html, keys);
   }
 
-  /* ---------- состояние ---------- */
-  var st = { test:null, i:0, score:0, wrong:[] };
-
-  function best(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||"{}"); }catch(e){ return {}; } }
-  function saveBest(id, val){
+  function fmtDate(iso){
     try{
-      var b = best();
-      if (!(id in b) || val > b[id]){ b[id] = val; localStorage.setItem(LS_KEY, JSON.stringify(b)); }
-    }catch(e){}
+      return new Date(iso).toLocaleDateString("ru-RU", {day:"numeric", month:"short"});
+    }catch(e){ return iso.slice(0,10); }
   }
 
+  /* ---------- хранилище ---------- */
+  function lsGet(key){ try{ return JSON.parse(localStorage.getItem(key)||"{}"); }catch(e){ return {}; } }
+  function lsSet(key, val){ try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
+
+  function saveBest(id, val){
+    var b = lsGet(K_BEST);
+    if (!(id in b) || val > b[id]){ b[id] = val; lsSet(K_BEST, b); }
+  }
+  // Запись попытки: дата, счёт, номера заданий с ошибками.
+  function logAttempt(id, score, total, wrongNums){
+    var log = lsGet(K_LOG);
+    (log[id] = log[id] || []).push({ d:new Date().toISOString(), score:score, total:total, wrong:wrongNums });
+    lsSet(K_LOG, log);
+  }
+
+  /* ---------- состояние и экраны ---------- */
+  var st = { test:null, i:0, score:0, wrong:[] };
+
   function show(view){
-    ["vList","vQuiz","vResult"].forEach(function(v){ $(v).hidden = (v !== view); });
-    if (view === "vList") $("hProg").textContent = "";
+    ["vList","vStats","vQuiz","vResult"].forEach(function(v){ $(v).hidden = (v !== view); });
+    var home = (view === "vList" || view === "vStats");
+    $("hwTabs").hidden = !home;
+    $("foot").hidden = !home;
+    $("seg-tests").classList.toggle("on", view === "vList");
+    $("seg-stats").classList.toggle("on", view === "vStats");
+    if (home) $("hProg").textContent = "";
   }
 
   /* ---------- список тестов ---------- */
   function renderList(){
     var box = $("vList"); box.innerHTML = "";
-    var b = best();
-    TESTS.forEach(function(t){
+    var b = lsGet(K_BEST), log = lsGet(K_LOG);
+    TESTS.slice().sort(function(x,y){ return (y.date||"").localeCompare(x.date||""); })
+    .forEach(function(t){
       var card = document.createElement("div"); card.className = "panel tcard";
       var h = document.createElement("h2"); h.textContent = t.title; card.appendChild(h);
       var tp = document.createElement("p"); tp.className = "topics";
       tp.textContent = t.topics.join(" · "); card.appendChild(tp);
+      var attempts = log[t.id] || [];
+      var bits = [t.tasks.length + " заданий"];
+      if (t.date) bits.push("от " + fmtDate(t.date));
+      if (attempts.length) bits.push("попыток: " + attempts.length);
       var m = document.createElement("p"); m.className = "meta";
-      m.textContent = t.tasks.length + " заданий";
+      m.textContent = bits.join(" · ");
       if (t.id in b){
         m.appendChild(document.createTextNode(" · "));
         var s = document.createElement("span"); s.className = "best";
@@ -207,6 +260,87 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
       box.appendChild(card);
     });
     show("vList");
+  }
+
+  /* ---------- статистика ---------- */
+  function renderStats(){
+    var box = $("vStats"); box.innerHTML = "";
+    var log = lsGet(K_LOG);
+    var byId = {}; TESTS.forEach(function(t){ byId[t.id] = t; });
+
+    // собираем: ошибки/ответы по темам, ошибки по заданиям, ленту попыток
+    var topics = {}, perTask = {}, feed = [];
+    Object.keys(log).forEach(function(id){
+      var t = byId[id]; if (!t) return;
+      log[id].forEach(function(at){
+        feed.push({ d:at.d, title:t.title, score:at.score, total:at.total });
+        t.tasks.forEach(function(task, i){
+          var tp = topics[task.t] = topics[task.t] || {err:0, all:0};
+          tp.all++;
+          if (at.wrong.indexOf(i+1) >= 0){
+            tp.err++;
+            var key = id + "#" + (i+1);
+            perTask[key] = perTask[key] || {test:t, num:i+1, task:task, err:0};
+            perTask[key].err++;
+          }
+        });
+      });
+    });
+
+    if (!feed.length){
+      var e = document.createElement("div"); e.className = "panel";
+      e.innerHTML = '<p class="empty">Пока нет прохождений — статистика появится после первого теста.</p>';
+      box.appendChild(e);
+      show("vStats"); return;
+    }
+
+    // по темам
+    var h1 = document.createElement("h3"); h1.className = "sec"; h1.textContent = "По темам";
+    box.appendChild(h1);
+    var p1 = document.createElement("div"); p1.className = "panel";
+    Object.keys(topics)
+      .sort(function(a,b){ return topics[b].err/topics[b].all - topics[a].err/topics[a].all; })
+      .forEach(function(name){
+        var tp = topics[name], pct = Math.round(100*tp.err/tp.all);
+        var r = document.createElement("div"); r.className = "trow";
+        r.innerHTML = '<div class="name">' + esc(name) +
+          '<div class="bar"><i style="width:' + pct + '%"></i></div></div>' +
+          '<div class="cnt">' + tp.err + ' из ' + tp.all + '</div>';
+        p1.appendChild(r);
+      });
+    box.appendChild(p1);
+
+    // западающие задания
+    var hard = Object.keys(perTask).map(function(k){ return perTask[k]; })
+      .sort(function(a,b){ return b.err - a.err; }).slice(0, 10);
+    if (hard.length){
+      var h2 = document.createElement("h3"); h2.className = "sec";
+      h2.textContent = "Западающие задания";
+      box.appendChild(h2);
+      hard.forEach(function(x){
+        var d = document.createElement("div"); d.className = "panel mist";
+        d.innerHTML =
+          '<div class="n">№ ' + x.num + " · " + esc(x.test.title) + " · ошибок: " + x.err + "</div>" +
+          '<div class="sen">' + sentenceHTML(x.task.s, x.task.o[x.task.a], x.task.keys) + "</div>" +
+          '<div class="w">' + esc(x.task.why) + "</div>";
+        box.appendChild(d);
+      });
+    }
+
+    // история
+    var h3 = document.createElement("h3"); h3.className = "sec"; h3.textContent = "История";
+    box.appendChild(h3);
+    var p3 = document.createElement("div"); p3.className = "panel";
+    feed.sort(function(a,b){ return b.d.localeCompare(a.d); }).slice(0, 30)
+      .forEach(function(f){
+        var r = document.createElement("div"); r.className = "hrow";
+        r.innerHTML = '<span class="d">' + fmtDate(f.d) + '</span>' +
+          '<span class="t">' + esc(f.title) + '</span>' +
+          '<span class="s">' + f.score + "/" + f.total + '</span>';
+        p3.appendChild(r);
+      });
+    box.appendChild(p3);
+    show("vStats");
   }
 
   /* ---------- прохождение ---------- */
@@ -258,7 +392,6 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
       else b.classList.add("faded");
     });
 
-    // правильная форма встаёт в предложение, ключи подсвечиваются маркером
     $("qSentence").innerHTML = sentenceHTML(task.s, task.o[task.a], task.keys);
     progLine();
 
@@ -280,6 +413,8 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
   function renderResult(){
     var t = st.test, total = t.tasks.length;
     saveBest(t.id, st.score);
+    logAttempt(t.id, st.score, total, st.wrong.map(function(w){ return w.n; }));
+
     var box = $("vResult"); box.innerHTML = "";
     $("hProg").textContent = "";
 
@@ -317,16 +452,56 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
     show("vResult");
   }
 
+  /* ---------- экспорт / импорт истории ---------- */
+  $("btnExp").onclick = function(){
+    var data = JSON.stringify({ hwBest: lsGet(K_BEST), hwLog: lsGet(K_LOG) }, null, 2);
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([data], {type:"application/json"}));
+    a.download = "homework-history.json";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  };
+  $("btnImp").onclick = function(){ $("impFile").click(); };
+  $("impFile").onchange = function(){
+    var f = this.files[0]; if (!f) return;
+    var r = new FileReader();
+    r.onload = function(){
+      try{
+        var inc = JSON.parse(r.result);
+        // лучшие результаты: берём максимум
+        var b = lsGet(K_BEST);
+        Object.keys(inc.hwBest||{}).forEach(function(id){
+          if (!(id in b) || inc.hwBest[id] > b[id]) b[id] = inc.hwBest[id];
+        });
+        lsSet(K_BEST, b);
+        // попытки: объединяем без дублей (по времени попытки)
+        var log = lsGet(K_LOG);
+        Object.keys(inc.hwLog||{}).forEach(function(id){
+          var cur = log[id] = log[id] || [];
+          var seen = {}; cur.forEach(function(a){ seen[a.d] = 1; });
+          (inc.hwLog[id]||[]).forEach(function(a){ if (!seen[a.d]) cur.push(a); });
+          cur.sort(function(a,b){ return a.d.localeCompare(b.d); });
+        });
+        lsSet(K_LOG, log);
+        renderList();
+      }catch(e){ alert("Файл не похож на экспорт истории."); }
+    };
+    r.readAsText(f);
+  };
+
   /* ---------- навигация ---------- */
   $("nav-quiz").onclick = function(){ location.href = "index.html"; };
   $("nav-dict").onclick = function(){ location.href = "index.html#dict"; };
   $("nav-hw").onclick = renderList;
+  $("seg-tests").onclick = renderList;
+  $("seg-stats").onclick = renderStats;
   $("btnQuit").onclick = renderList;
 
   // для автотестов
   window.__hw = { assemble: assemble, assembleText: assembleText,
                   sentenceHTML: sentenceHTML, state: st, start: startTest,
-                  renderList: renderList };
+                  renderList: renderList, renderStats: renderStats,
+                  getLog: function(){ return lsGet(K_LOG); } };
 
   renderList();
 })();
