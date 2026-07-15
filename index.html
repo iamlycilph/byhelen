@@ -81,6 +81,7 @@ textarea{resize:vertical;min-height:56px}
   <nav>
     <button id="tab-quiz" class="on">Квиз</button>
     <button id="tab-dict">Словарь</button>
+    <button id="tab-hw">Домашка</button>
   </nav>
   <main id="main"></main>
   <div class="foot" id="foot"></div>
@@ -306,7 +307,8 @@ function setTab(t){
 }
 $("#tab-quiz").onclick=()=>setTab("quiz");
 $("#tab-dict").onclick=()=>setTab("dict");
-renderFoot(); setTab("quiz");
+$("#tab-hw").onclick=()=>{location.href="homework.html"};
+renderFoot(); setTab(location.hash==="#dict"?"dict":"quiz");
 window.__app={startQuiz,setup,scopeCards,distractors}; // для автотестов
 })();
 </script>
