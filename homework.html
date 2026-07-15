@@ -206,15 +206,34 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
   function lsGet(key){ try{ return JSON.parse(localStorage.getItem(key)||"{}"); }catch(e){ return {}; } }
   function lsSet(key, val){ try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
 
+  // Сырая лента событий: start / answer / finish / quit, каждая с временем.
+  // ms в answer — сколько думал от показа вопроса до нажатия.
+  var K_EV = "hwEvents";
+  function evGet(){ try{ return JSON.parse(localStorage.getItem(K_EV)||"[]"); }catch(e){ return []; } }
+  function addEvent(ev){
+    try{
+      var a = evGet();
+      ev.t = new Date().toISOString();
+      a.push(ev);
+      if (a.length > 5000) a = a.slice(a.length - 5000);
+      localStorage.setItem(K_EV, JSON.stringify(a));
+    }catch(e){}
+  }
   function saveBest(id, val){
     var b = lsGet(K_BEST);
     if (!(id in b) || val > b[id]){ b[id] = val; lsSet(K_BEST, b); }
   }
-  // Запись попытки: дата, счёт, номера заданий с ошибками.
-  function logAttempt(id, score, total, wrongNums){
+  // Запись попытки: дата, счёт, ошибки как {n: номер, ch: индекс выбранного}.
+  function logAttempt(id, score, total, wrongEntries){
     var log = lsGet(K_LOG);
-    (log[id] = log[id] || []).push({ d:new Date().toISOString(), score:score, total:total, wrong:wrongNums });
+    (log[id] = log[id] || []).push({ d:new Date().toISOString(), score:score, total:total, wrong:wrongEntries });
     lsSet(K_LOG, log);
+  }
+  // Старые записи хранили просто номера — приводим к общему виду.
+  function normWrong(at){
+    return (at.wrong||[]).map(function(w){
+      return typeof w === "number" ? {n:w, ch:null} : w;
+    });
   }
 
   /* ---------- состояние и экраны ---------- */
@@ -274,10 +293,11 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
       var t = byId[id]; if (!t) return;
       log[id].forEach(function(at){
         feed.push({ d:at.d, title:t.title, score:at.score, total:at.total });
+        var wnums = normWrong(at).map(function(w){ return w.n; });
         t.tasks.forEach(function(task, i){
           var tp = topics[task.t] = topics[task.t] || {err:0, all:0};
           tp.all++;
-          if (at.wrong.indexOf(i+1) >= 0){
+          if (wnums.indexOf(i+1) >= 0){
             tp.err++;
             var key = id + "#" + (i+1);
             perTask[key] = perTask[key] || {test:t, num:i+1, task:task, err:0};
@@ -346,6 +366,7 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
   /* ---------- прохождение ---------- */
   function startTest(t){
     st.test = t; st.i = 0; st.score = 0; st.wrong = [];
+    addEvent({ e:"start", test:t.id });
     show("vQuiz");
     renderTask();
   }
@@ -359,6 +380,7 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
 
   function renderTask(){
     var task = st.test.tasks[st.i];
+    st.qShownAt = Date.now();
     progLine();
     $("qSentence").innerHTML = sentenceHTML(task.s, null, null);
     $("qWhy").hidden = true;
@@ -380,6 +402,8 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
   function answer(idx){
     var t = st.test, task = t.tasks[st.i];
     var right = (idx === task.a);
+    addEvent({ e:"answer", test:t.id, n:st.i+1, ch:idx, ok:right,
+               ms:Date.now() - st.qShownAt });
     if (right) st.score++;
     else st.wrong.push({ n: st.i+1, task: task, chosen: idx });
 
@@ -412,8 +436,9 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
   /* ---------- итог ---------- */
   function renderResult(){
     var t = st.test, total = t.tasks.length;
+    addEvent({ e:"finish", test:t.id, score:st.score, total:total });
     saveBest(t.id, st.score);
-    logAttempt(t.id, st.score, total, st.wrong.map(function(w){ return w.n; }));
+    logAttempt(t.id, st.score, total, st.wrong.map(function(w){ return {n:w.n, ch:w.chosen}; }));
 
     var box = $("vResult"); box.innerHTML = "";
     $("hProg").textContent = "";
@@ -453,8 +478,34 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
   }
 
   /* ---------- экспорт / импорт истории ---------- */
+  // Файл экспорта самодостаточен: wrong — машинное поле,
+  // "разбор" — то же самое словами (предложение, твой ответ, правильный).
+  function buildExport(){
+    var log = lsGet(K_LOG), byId = {};
+    TESTS.forEach(function(t){ byId[t.id] = t; });
+    var out = {};
+    Object.keys(log).forEach(function(id){
+      out[id] = log[id].map(function(at){
+        var rec = { d:at.d, score:at.score, total:at.total, wrong:at.wrong };
+        var t = byId[id];
+        if (t) rec["разбор"] = normWrong(at).map(function(w){
+          var task = t.tasks[w.n-1];
+          if (!task) return { "№":w.n };
+          return {
+            "№": w.n,
+            "тема": task.t,
+            "предложение": assembleText(task.s, task.o[task.a]),
+            "ответ": w.ch === null ? "(не записан)" : "ABCD".charAt(w.ch) + ") " + task.o[w.ch],
+            "правильно": "ABCD".charAt(task.a) + ") " + task.o[task.a]
+          };
+        });
+        return rec;
+      });
+    });
+    return { hwBest: lsGet(K_BEST), hwLog: out, hwEvents: evGet() };
+  }
   $("btnExp").onclick = function(){
-    var data = JSON.stringify({ hwBest: lsGet(K_BEST), hwLog: lsGet(K_LOG) }, null, 2);
+    var data = JSON.stringify(buildExport(), null, 2);
     var a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([data], {type:"application/json"}));
     a.download = "homework-history.json";
@@ -479,10 +530,25 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
         Object.keys(inc.hwLog||{}).forEach(function(id){
           var cur = log[id] = log[id] || [];
           var seen = {}; cur.forEach(function(a){ seen[a.d] = 1; });
-          (inc.hwLog[id]||[]).forEach(function(a){ if (!seen[a.d]) cur.push(a); });
+          (inc.hwLog[id]||[]).forEach(function(a){
+            if (seen[a.d]) return;
+            cur.push({ d:a.d, score:a.score, total:a.total,
+                       wrong:(a.wrong||[]).map(function(w){
+                         return typeof w === "number" ? {n:w, ch:null} : {n:w.n, ch:("ch" in w)?w.ch:null};
+                       }) });
+          });
           cur.sort(function(a,b){ return a.d.localeCompare(b.d); });
         });
         lsSet(K_LOG, log);
+        if (Array.isArray(inc.hwEvents)){
+          var ev = evGet(), seenEv = {};
+          ev.forEach(function(x){ seenEv[x.t + "|" + x.e + "|" + (x.n||"")] = 1; });
+          inc.hwEvents.forEach(function(x){
+            if (!seenEv[x.t + "|" + x.e + "|" + (x.n||"")]) ev.push(x);
+          });
+          ev.sort(function(a,b){ return (a.t||"").localeCompare(b.t||""); });
+          try{ localStorage.setItem(K_EV, JSON.stringify(ev.slice(-5000))); }catch(e){}
+        }
         renderList();
       }catch(e){ alert("Файл не похож на экспорт истории."); }
     };
@@ -490,18 +556,21 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
   };
 
   /* ---------- навигация ---------- */
-  $("nav-quiz").onclick = function(){ location.href = "index.html"; };
-  $("nav-dict").onclick = function(){ location.href = "index.html#dict"; };
-  $("nav-hw").onclick = renderList;
+  function logQuitIfRunning(){
+    if (!$("vQuiz").hidden && st.test) addEvent({ e:"quit", test:st.test.id, at:st.i+1 });
+  }
+  $("nav-quiz").onclick = function(){ logQuitIfRunning(); location.href = "index.html"; };
+  $("nav-dict").onclick = function(){ logQuitIfRunning(); location.href = "index.html#dict"; };
+  $("nav-hw").onclick = function(){ logQuitIfRunning(); renderList(); };
   $("seg-tests").onclick = renderList;
   $("seg-stats").onclick = renderStats;
-  $("btnQuit").onclick = renderList;
+  $("btnQuit").onclick = function(){ logQuitIfRunning(); renderList(); };
 
   // для автотестов
   window.__hw = { assemble: assemble, assembleText: assembleText,
                   sentenceHTML: sentenceHTML, state: st, start: startTest,
                   renderList: renderList, renderStats: renderStats,
-                  getLog: function(){ return lsGet(K_LOG); } };
+                  getLog: function(){ return lsGet(K_LOG); }, buildExport: buildExport, getEvents: evGet };
 
   renderList();
 })();
