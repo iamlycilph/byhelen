@@ -92,6 +92,14 @@ h3.sec{font-size:12px;letter-spacing:.4px;text-transform:uppercase;color:var(--m
 .empty{font-size:13px;color:var(--muted);padding:4px 2px}
 .foot{margin-top:22px;font-size:12px;color:var(--muted)}
 .foot button{margin-right:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{flex:0 0 auto;min-height:40px;padding:9px 14px;font-size:15px}
+.built{min-height:48px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.built .word{background:var(--paper);border:1px solid var(--line);border-radius:9px;
+  padding:7px 11px;font-family:var(--serif);font-size:17px;cursor:pointer}
+.built.okline .word{background:var(--ok);border-color:var(--ok);color:#fff;cursor:default}
+.built.badline .word{background:var(--bad);border-color:var(--bad);color:#fff;cursor:default}
+.built .hint{color:var(--muted);font-size:13px;font-family:var(--sans)}
 button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
 </style>
 </head>
@@ -196,6 +204,25 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
     return markKeys(html, keys);
   }
 
+  // Правильный ответ задания как текст/разметка — для любого типа
+  function taskCorrectText(task){
+    if (task.type === "order") return task.target;
+    if (task.type === "fix") return task.o[task.a];
+    return assembleText(task.s, task.o[task.a]);
+  }
+  function taskCorrectHTML(task){
+    if (task.type === "order") return markKeys(esc(task.target), task.keys);
+    if (task.type === "fix") return markKeys(esc(task.o[task.a]), task.keys);
+    return sentenceHTML(task.s, task.o[task.a], task.keys);
+  }
+  // Как показать то, что выбрал человек (ch: индекс или собранная строка)
+  function userAnswerText(task, ch){
+    if (ch === null || ch === undefined) return "(не записан)";
+    if (task.type === "order") return String(ch);
+    if (typeof ch !== "number" || !task.o[ch]) return String(ch);
+    var letter = (task.type === "bank") ? "" : "ABCD".charAt(ch) + ") ";
+    return letter + task.o[ch];
+  }
   function fmtDate(iso){
     try{
       return new Date(iso).toLocaleDateString("ru-RU", {day:"numeric", month:"short"});
@@ -341,7 +368,7 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
         var d = document.createElement("div"); d.className = "panel mist";
         d.innerHTML =
           '<div class="n">№ ' + x.num + " · " + esc(x.test.title) + " · ошибок: " + x.err + "</div>" +
-          '<div class="sen">' + sentenceHTML(x.task.s, x.task.o[x.task.a], x.task.keys) + "</div>" +
+          '<div class="sen">' + taskCorrectHTML(x.task) + "</div>" +
           '<div class="w">' + esc(x.task.why) + "</div>";
         box.appendChild(d);
       });
@@ -382,21 +409,100 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
     var task = st.test.tasks[st.i];
     st.qShownAt = Date.now();
     progLine();
-    $("qSentence").innerHTML = sentenceHTML(task.s, null, null);
     $("qWhy").hidden = true;
     $("btnNext").hidden = true;
-
     var box = $("qOpts"); box.innerHTML = "";
+    var sen = $("qSentence");
+    sen.className = "panel sentence";
+
+    if (task.type === "order"){ renderOrder(task, box, sen); return; }
+
+    sen.innerHTML = sentenceHTML(task.s, null, null);
+    if (task.type === "bank") box.classList.add("chips"); else box.classList.remove("chips");
     task.o.forEach(function(optText, idx){
       var b = document.createElement("button");
       b.className = "opt"; b.dataset.idx = idx;
-      var lt = document.createElement("span"); lt.className = "lt";
-      lt.textContent = "ABCD".charAt(idx) + ")";
-      b.appendChild(lt);
+      if (task.type !== "bank"){
+        var lt = document.createElement("span"); lt.className = "lt";
+        lt.textContent = "ABCD".charAt(idx) + ")";
+        b.appendChild(lt);
+      }
       b.appendChild(document.createTextNode(optText));
       b.onclick = function(){ answer(idx); };
       box.appendChild(b);
     });
+  }
+
+  /* ---- сборка вопроса из карточек ---- */
+  function renderOrder(task, box, sen){
+    st.order = [];
+    sen.className = "panel built";
+    sen.innerHTML = '<span class="hint">Собирай вопрос — нажимай слова по порядку. Нажатие по слову здесь возвращает его вниз.</span>';
+    box.classList.add("chips");
+    task.w.forEach(function(word, idx){
+      var b = document.createElement("button");
+      b.className = "opt"; b.dataset.idx = idx;
+      b.appendChild(document.createTextNode(word));
+      b.onclick = function(){
+        if (b.disabled) return;
+        st.order.push(idx); b.disabled = true; b.classList.add("faded");
+        drawBuilt(task);
+      };
+      box.appendChild(b);
+    });
+    drawBuilt(task);
+  }
+  function drawBuilt(task){
+    var sen = $("qSentence");
+    if (!st.order.length){
+      sen.innerHTML = '<span class="hint">Собирай вопрос — нажимай слова по порядку. Нажатие по слову здесь возвращает его вниз.</span>';
+    } else {
+      sen.innerHTML = "";
+      st.order.forEach(function(wIdx, pos){
+        var w = document.createElement("span"); w.className = "word";
+        w.textContent = task.w[wIdx];
+        w.onclick = function(){
+          if (st.orderDone) return;
+          st.order.splice(pos, 1);
+          var chip = $("qOpts").querySelector('[data-idx="'+wIdx+'"]');
+          chip.disabled = false; chip.classList.remove("faded");
+          drawBuilt(task);
+        };
+        sen.appendChild(w);
+      });
+    }
+    var next = $("btnNext");
+    if (st.order.length === task.w.length){
+      st.orderDone = false;
+      next.textContent = "Проверить"; next.hidden = false;
+      next.onclick = function(){ checkOrder(task); };
+    } else { next.hidden = true; }
+  }
+  function checkOrder(task){
+    var t = st.test;
+    st.orderDone = true;
+    var builtWords = st.order.map(function(i){ return task.w[i]; });
+    var built = builtWords.join(" ");
+    built = built.charAt(0).toUpperCase() + built.slice(1) + "?";
+    var right = built.toLowerCase() === task.target.toLowerCase();
+    addEvent({ e:"answer", test:t.id, n:st.i+1, ch:built, ok:right,
+               ms:Date.now() - st.qShownAt });
+    if (right) st.score++;
+    else st.wrong.push({ n: st.i+1, task: task, chosen: built });
+    $("qSentence").classList.add(right ? "okline" : "badline");
+    $("qOpts").innerHTML = "";
+    progLine();
+    var why = $("qWhy");
+    why.innerHTML = (right ? "<b>Верно.</b> " :
+      "<b>Правильно: " + esc(task.target) + "</b> ") + esc(task.why);
+    why.hidden = false;
+    var next = $("btnNext");
+    next.textContent = (st.i === t.tasks.length-1) ? "Итоги" : "Дальше";
+    next.hidden = false;
+    next.onclick = function(){
+      if (st.i === t.tasks.length-1) renderResult();
+      else { st.i++; renderTask(); }
+    };
   }
 
   function answer(idx){
@@ -416,12 +522,14 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
       else b.classList.add("faded");
     });
 
-    $("qSentence").innerHTML = sentenceHTML(task.s, task.o[task.a], task.keys);
+    $("qSentence").innerHTML = taskCorrectHTML(task);
     progLine();
 
     var why = $("qWhy");
+    var rightLabel = (task.type === "bank") ? task.o[task.a] :
+      "ABCD".charAt(task.a) + ") " + task.o[task.a];
     why.innerHTML = (right ? "<b>Верно.</b> " : "<b>Правильно: " +
-      "ABCD".charAt(task.a) + ") " + esc(task.o[task.a]) + ".</b> ") + esc(task.why);
+      esc(rightLabel) + ".</b> ") + esc(task.why);
     why.hidden = false;
 
     var next = $("btnNext");
@@ -456,9 +564,8 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
         var d = document.createElement("div"); d.className = "panel mist";
         d.innerHTML =
           '<div class="n">№ ' + w.n + "</div>" +
-          '<div class="sen">' + sentenceHTML(w.task.s, w.task.o[w.task.a], w.task.keys) + "</div>" +
-          '<div class="yours">Твой ответ: ' + "ABCD".charAt(w.chosen) + ") " +
-            esc(w.task.o[w.chosen]) + "</div>" +
+          '<div class="sen">' + taskCorrectHTML(w.task) + "</div>" +
+          '<div class="yours">Твой ответ: ' + esc(userAnswerText(w.task, w.chosen)) + "</div>" +
           '<div class="w">' + esc(w.task.why) + "</div>";
         box.appendChild(d);
       });
@@ -494,9 +601,11 @@ button:focus-visible{outline:3px solid #B9CDC1;outline-offset:2px}
           return {
             "№": w.n,
             "тема": task.t,
-            "предложение": assembleText(task.s, task.o[task.a]),
-            "ответ": w.ch === null ? "(не записан)" : "ABCD".charAt(w.ch) + ") " + task.o[w.ch],
-            "правильно": "ABCD".charAt(task.a) + ") " + task.o[task.a]
+            "предложение": taskCorrectText(task),
+            "ответ": userAnswerText(task, w.ch),
+            "правильно": (task.type === "order") ? task.target :
+              (task.type === "bank") ? task.o[task.a] :
+              "ABCD".charAt(task.a) + ") " + task.o[task.a]
           };
         });
         return rec;
