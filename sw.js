@@ -1,6 +1,6 @@
 // Офлайн-кэш приложения. После первой успешной загрузки
 // квиз работает без сети; обновления подтягиваются в фоне.
-const V = "vq-v3";
+const V = "vq-v4";
 const SHELL = ["./", "index.html", "data.js", "icon.png", "homework.html", "homework-data.js"];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(V).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));

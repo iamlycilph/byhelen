@@ -307,6 +307,10 @@ window.VOCAB = {
   {
    "n": 77,
    "date": "July, 04"
+  },
+  {
+   "n": 78,
+   "date": "July, 18"
   }
  ],
  "cards": [
@@ -12366,6 +12370,182 @@ window.VOCAB = {
     "It's a ten-minute walk, give or take."
    ],
    "auto": true
+  },
+  {
+   "id": "173d1bc0",
+   "k": "to urge smb to do sth",
+   "lesson": 78,
+   "en": "To urge smb to do sth",
+   "ru": "настойчиво убеждать, призывать",
+   "ex": [
+    "I was urged by some of my teachers not to leave school."
+   ],
+   "auto": false
+  },
+  {
+   "id": "21fcbe06",
+   "k": "trainee",
+   "lesson": 78,
+   "en": "Trainee",
+   "ru": "стажёр, ученик (на производстве)",
+   "ex": [
+    "I began working as a trainee heating engineer in East Belfast."
+   ],
+   "auto": false
+  },
+  {
+   "id": "1ad8ba54",
+   "k": "demanding",
+   "lesson": 78,
+   "en": "Demanding",
+   "ru": "требующий больших усилий; требовательный",
+   "ex": [
+    "The work was not demanding, but I found the factory environment annoying."
+   ],
+   "auto": false
+  },
+  {
+   "id": "46fc070b",
+   "k": "wages",
+   "lesson": 78,
+   "en": "Wages",
+   "ru": "зарплата (рабочая, повременная; ср. salary у офисных)",
+   "ex": [
+    "I realised that I had forgotten to collect my wages."
+   ],
+   "auto": false
+  },
+  {
+   "id": "de22ef73",
+   "k": "the foreseeable future",
+   "lesson": 78,
+   "en": "The foreseeable future",
+   "ru": "обозримое будущее",
+   "ex": [
+    "To continue with that for the foreseeable future was not an exciting thought."
+   ],
+   "auto": false
+  },
+  {
+   "id": "5f26bb90",
+   "k": "against the advice of smb",
+   "lesson": 78,
+   "en": "Against the advice of smb",
+   "ru": "вопреки чьему-либо совету",
+   "ex": [
+    "I had left school against the advice of my teachers."
+   ],
+   "auto": false
+  },
+  {
+   "id": "ce3cfd77",
+   "k": "companionship",
+   "lesson": 78,
+   "en": "Companionship",
+   "ru": "дружеское общение, компания",
+   "ex": [
+    "The companionship I knew at school was absent."
+   ],
+   "auto": false
+  },
+  {
+   "id": "5144adfe",
+   "k": "amongst among",
+   "lesson": 78,
+   "en": "Amongst = among",
+   "ru": "среди (amongst — более книжная/британская форма)",
+   "ex": [
+    "To sit amongst adults was confusing."
+   ],
+   "auto": false
+  },
+  {
+   "id": "16853a1a",
+   "k": "soaking wet",
+   "lesson": 78,
+   "en": "Soaking (wet)",
+   "ru": "насквозь промокший",
+   "ex": [
+    "It was hard to concentrate on Shakespeare with wet shoes and soaking trousers."
+   ],
+   "auto": false
+  },
+  {
+   "id": "5797625a",
+   "k": "by chance",
+   "lesson": 78,
+   "en": "By chance",
+   "ru": "случайно, по воле случая",
+   "ex": [
+    "By chance, I won some prizes and literary awards in national competitions."
+   ],
+   "auto": false
+  },
+  {
+   "id": "bc3fd68b",
+   "k": "astonishment",
+   "lesson": 78,
+   "en": "Astonishment",
+   "ru": "изумление",
+   "ex": [
+    "I stared at her in astonishment and disbelief."
+   ],
+   "auto": false
+  },
+  {
+   "id": "bd133ec0",
+   "k": "disbelief",
+   "lesson": 78,
+   "en": "Disbelief",
+   "ru": "неверие; in disbelief — не веря своим глазам/ушам",
+   "ex": [
+    "I stared at her in astonishment and disbelief."
+   ],
+   "auto": false
+  },
+  {
+   "id": "36622fb1",
+   "k": "to stare at smb sth",
+   "lesson": 78,
+   "en": "To stare at smb/sth",
+   "ru": "уставиться, пристально смотреть",
+   "ex": [
+    "I stared at her in astonishment."
+   ],
+   "auto": false
+  },
+  {
+   "id": "9e0d7673",
+   "k": "eventually",
+   "lesson": 78,
+   "en": "Eventually",
+   "ru": "в конце концов, в итоге (не «эвентуально/возможно»!)",
+   "ex": [
+    "She eventually persuaded me that I should do it the following day."
+   ],
+   "auto": false
+  },
+  {
+   "id": "15501918",
+   "k": "to put smb off sth",
+   "lesson": 78,
+   "en": "To put smb off (sth)",
+   "ru": "отбить охоту, отпугнуть (ср. put off = отложить, урок 75)",
+   "ex": [
+    "But nothing could put me off."
+   ],
+   "auto": false
+  },
+  {
+   "id": "057c1ca9",
+   "k": "to pursue the matter no further",
+   "lesson": 78,
+   "en": "To pursue the matter (no further)",
+   "ru": "(не) продолжать настаивать, (не) развивать тему",
+   "ex": [
+    "They pursued the matter no further."
+   ],
+   "auto": false
   }
  ]
 };
